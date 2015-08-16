@@ -23,4 +23,8 @@ class Image {
         self.name = name
         self.epochTime = epochTime
     }
+    
+    class func sorterForTime(this: Image, that: Image) -> Bool {
+        return this.epochTime > that.epochTime
+    }
 }

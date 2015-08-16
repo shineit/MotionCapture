@@ -25,5 +25,12 @@ class ImagesModel {
     func clear() {
         images.removeAll()
     }
+    
+    func sortByTime(_ direction: NSComparisonResult = .OrderedDescending) {
+        images.sort(Image.sorterForTime)
+        if (direction == .OrderedAscending) {
+            images = images.reverse()
+        }
+    }
 
 }

@@ -49,6 +49,7 @@ class ImagesTableViewController: UITableViewController {
                     let image = Image(name: name, epochTime: epochTime)
                     self.imagesModel.addImage(image)
                 }
+                self.imagesModel.sortByTime()
                 self.tableView.reloadData()
                 self.refreshControl?.endRefreshing()
         }
