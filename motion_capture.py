@@ -59,7 +59,7 @@ try:
       print "  Photo captured."
       # Upload the photo to the server
       file = open('image.jpg', 'rb')
-      ts = int(time.time())
+      ts = time.time()
       session.storbinary('STOR image-' + str(ts) + '.jpg', file)
       file.close()
       print "  Photo uploaded."
