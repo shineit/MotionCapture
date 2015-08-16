@@ -11,7 +11,7 @@ GPIO.setmode(GPIO.BCM)
 # Define GPIO to use on Pi
 GPIO_PIR = 17
 GPIO_LED = 22
-GPIO_BUTTON = 27
+GPIO_BUTTON = 13
 
 # Create an instance of PiCamera class and configure
 camera = picamera.PiCamera()
@@ -22,7 +22,7 @@ print "Motion Capture (CTRL-C to exit)"
 # Setup pins as input or output
 GPIO.setup(GPIO_PIR, GPIO.IN)
 GPIO.setup(GPIO_LED, GPIO.OUT)
-#GPIO.setup(GPIO_BUTTON, GPIO.IN)
+GPIO.setup(GPIO_BUTTON, GPIO.IN)
  
 Current_State  = 0
 Previous_State = 0
@@ -56,14 +56,22 @@ try:
     Current_State  = 0
  
   print "  Ready"
+
+  button_down_count = 0
  
   # Loop until users quits with CTRL-C, or presses button
   while True :
 
     # Read button state
-    #button_state = GPIO.input(GPIO_BUTTON)
-    #if (button_state==1):
-    #  terminate()
+    button_state = GPIO.input(GPIO_BUTTON)
+    if button_state == 1:
+      button_down_count = 0
+    else:
+      button_down_count += 1
+
+    # Quit if the button is held down for longer than 2 sec
+    if button_down_count > 200:
+      terminate()
  
     # Read PIR state
     Current_State = GPIO.input(GPIO_PIR)
