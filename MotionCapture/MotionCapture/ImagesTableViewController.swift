@@ -14,16 +14,28 @@ class ImagesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup pull to refresh
+        refreshControl?.addTarget(self, action: "loadImageList", forControlEvents: UIControlEvents.ValueChanged)
+        
+        loadImageList()
+    }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    func showLoadingSpinner() {
+        // Need to force the table offset when programmatically showing the refresh control
+        if (tableView.contentOffset.y == 0.0) {
+            tableView.setContentOffset(CGPointMake(0.0, -64.0), animated: true)
+            refreshControl?.beginRefreshing()
+        }
+    }
+    
+    func loadImageList() {
+        showLoadingSpinner()
         
         Alamofire.request(.GET, "http://birdcam.floccul.us/images")
             .responseJSON { _, _, json, _ in
@@ -35,12 +47,8 @@ class ImagesTableViewController: UITableViewController {
                     ImagesModel.sharedInstance.addImage((name: name, time: epochTime))
                 }
                 self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
