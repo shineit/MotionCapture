@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		689011421B802C760007F062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011411B802C760007F062 /* AppDelegate.swift */; };
-		689011441B802C760007F062 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011431B802C760007F062 /* ViewController.swift */; };
 		689011471B802C760007F062 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689011451B802C760007F062 /* Main.storyboard */; };
 		689011491B802C760007F062 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 689011481B802C760007F062 /* Images.xcassets */; };
 		6890114C1B802C760007F062 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6890114A1B802C760007F062 /* LaunchScreen.xib */; };
 		689011581B802C770007F062 /* MotionCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011571B802C770007F062 /* MotionCaptureTests.swift */; };
+		689011621B802DD70007F062 /* ImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011611B802DD70007F062 /* ImagesTableViewController.swift */; };
+		689011641B802E7F0007F062 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011631B802E7F0007F062 /* ImagesModel.swift */; };
+		689011661B80338D0007F062 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011651B80338D0007F062 /* ImageViewController.swift */; };
 		CA43796E4ACBB2DC067ED934 /* Pods_MotionCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321AAFEE1087665D0A0729B0 /* Pods_MotionCapture.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -32,13 +34,15 @@
 		6890113C1B802C760007F062 /* MotionCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		689011401B802C760007F062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689011411B802C760007F062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		689011431B802C760007F062 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		689011461B802C760007F062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		689011481B802C760007F062 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6890114B1B802C760007F062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		689011511B802C770007F062 /* MotionCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		689011561B802C770007F062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689011571B802C770007F062 /* MotionCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionCaptureTests.swift; sourceTree = "<group>"; };
+		689011611B802DD70007F062 /* ImagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesTableViewController.swift; sourceTree = "<group>"; };
+		689011631B802E7F0007F062 /* ImagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
+		689011651B80338D0007F062 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		6D4F05E899F5A695D186CD7B /* Pods-MotionCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionCapture.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotionCapture/Pods-MotionCapture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,12 +88,14 @@
 		6890113E1B802C760007F062 /* MotionCapture */ = {
 			isa = PBXGroup;
 			children = (
+				689011611B802DD70007F062 /* ImagesTableViewController.swift */,
+				689011651B80338D0007F062 /* ImageViewController.swift */,
 				689011411B802C760007F062 /* AppDelegate.swift */,
-				689011431B802C760007F062 /* ViewController.swift */,
 				689011451B802C760007F062 /* Main.storyboard */,
 				689011481B802C760007F062 /* Images.xcassets */,
 				6890114A1B802C760007F062 /* LaunchScreen.xib */,
 				6890113F1B802C760007F062 /* Supporting Files */,
+				689011631B802E7F0007F062 /* ImagesModel.swift */,
 			);
 			path = MotionCapture;
 			sourceTree = "<group>";
@@ -287,8 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				689011441B802C760007F062 /* ViewController.swift in Sources */,
 				689011421B802C760007F062 /* AppDelegate.swift in Sources */,
+				689011621B802DD70007F062 /* ImagesTableViewController.swift in Sources */,
+				689011661B80338D0007F062 /* ImageViewController.swift in Sources */,
+				689011641B802E7F0007F062 /* ImagesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
