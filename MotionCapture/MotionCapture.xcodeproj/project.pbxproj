@@ -15,6 +15,7 @@
 		689011621B802DD70007F062 /* ImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011611B802DD70007F062 /* ImagesTableViewController.swift */; };
 		689011641B802E7F0007F062 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011631B802E7F0007F062 /* ImagesModel.swift */; };
 		689011661B80338D0007F062 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011651B80338D0007F062 /* ImageViewController.swift */; };
+		689011681B803B400007F062 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011671B803B400007F062 /* Image.swift */; };
 		CA43796E4ACBB2DC067ED934 /* Pods_MotionCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321AAFEE1087665D0A0729B0 /* Pods_MotionCapture.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		689011611B802DD70007F062 /* ImagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesTableViewController.swift; sourceTree = "<group>"; };
 		689011631B802E7F0007F062 /* ImagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
 		689011651B80338D0007F062 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		689011671B803B400007F062 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		6D4F05E899F5A695D186CD7B /* Pods-MotionCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionCapture.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotionCapture/Pods-MotionCapture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				6890114A1B802C760007F062 /* LaunchScreen.xib */,
 				6890113F1B802C760007F062 /* Supporting Files */,
 				689011631B802E7F0007F062 /* ImagesModel.swift */,
+				689011671B803B400007F062 /* Image.swift */,
 			);
 			path = MotionCapture;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				689011621B802DD70007F062 /* ImagesTableViewController.swift in Sources */,
 				689011661B80338D0007F062 /* ImageViewController.swift in Sources */,
 				689011641B802E7F0007F062 /* ImagesModel.swift in Sources */,
+				689011681B803B400007F062 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

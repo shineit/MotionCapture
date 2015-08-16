@@ -44,7 +44,13 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         didSet {
             scrollView.contentSize = imageView.frame.size
             scrollView.delegate = self
-            scrollView.minimumZoomScale = 0.25
+        }
+    }
+    
+    func updateZoom() {
+        if let image = imageView.image {
+            scrollView.minimumZoomScale = min(scrollView.bounds.size.width / image.size.width, scrollView.bounds.size.height / image.size.height)
+            scrollView.zoomScale = scrollView.minimumZoomScale
             scrollView.maximumZoomScale = 1.0
         }
     }
@@ -62,6 +68,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
             spinner?.stopAnimating()
+            updateZoom()
         }
     }
     

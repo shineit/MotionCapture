@@ -8,8 +8,6 @@
 
 import UIKit
 
-public typealias Image = (name: String, time: Int)
-
 class ImagesModel {
    
     static let sharedInstance = ImagesModel()

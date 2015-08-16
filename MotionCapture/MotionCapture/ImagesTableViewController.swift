@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class ImagesTableViewController: UITableViewController {
 
+    let imagesModel = ImagesModel.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,11 +42,12 @@ class ImagesTableViewController: UITableViewController {
         Alamofire.request(.GET, "http://birdcam.floccul.us/images")
             .responseJSON { _, _, json, _ in
                 let images = JSON(json!)
-                ImagesModel.sharedInstance.clear()
+                self.imagesModel.clear()
                 for (index: String, subJson: JSON) in images {
                     let name = subJson["name"].stringValue
-                    let epochTime = subJson["epochTime"].intValue
-                    ImagesModel.sharedInstance.addImage((name: name, time: epochTime))
+                    let epochTime = subJson["epochTime"].doubleValue
+                    let image = Image(name: name, epochTime: epochTime)
+                    self.imagesModel.addImage(image)
                 }
                 self.tableView.reloadData()
                 self.refreshControl?.endRefreshing()
@@ -55,16 +58,15 @@ class ImagesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return ImagesModel.sharedInstance.images.count
+        return imagesModel.images.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ImageNameCell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-        let image = ImagesModel.sharedInstance.images[indexPath.row]
-        cell.textLabel?.text = image.name
-        cell.detailTextLabel?.text = "\(image.time)"
+        let image = imagesModel.images[indexPath.row]
+        cell.textLabel?.text = image.formattedTime
 
         return cell
     }
@@ -75,9 +77,9 @@ class ImagesTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let ivc = segue.destinationViewController as? ImageViewController {
             let path = self.tableView.indexPathForSelectedRow()!
-            let imageName = ImagesModel.sharedInstance.images[path.row].name
-            ivc.imageURL = NSURL(string: "http://birdcam.floccul.us/\(imageName)")
-            ivc.title = imageName
+            let image = imagesModel.images[path.row]
+            ivc.imageURL = NSURL(string: "http://birdcam.floccul.us/\(image.name)")
+            ivc.title = image.formattedTime
         }
     }
 
