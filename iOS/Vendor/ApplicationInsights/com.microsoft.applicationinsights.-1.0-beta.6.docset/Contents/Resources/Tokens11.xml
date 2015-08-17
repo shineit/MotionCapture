@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAITelemetryContext.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAITelemetryContext</TokenIdentifier>
+			<Abstract type="html">Context object which contains information about the device, user, session etc.</Abstract>
+			<DeclaredIn>MSAITelemetryContext.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

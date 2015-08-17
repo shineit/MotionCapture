@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>ApplicationInsights 1.0-beta.6</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				<Node type="folder">
+					<Name>Programming Guides</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+                
+				<Node>
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="14"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+				<Node>
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="15"/>
+						<NodeRef refid="16"/>
+						<NodeRef refid="17"/>
+						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
+						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
+						<NodeRef refid="22"/>
+						<NodeRef refid="23"/>
+						<NodeRef refid="24"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+                <Node>
+                    <Name>Blocks</Name>
+                    <Path>index.html</Path>
+                    <Subnodes>
+                        <NodeRef refid="25"/>
+                        
+                    </Subnodes>
+                </Node>
+                
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		<Node id="1" type="section">
+            <Name>Readme</Name>
+            <Path>docs/docs/Readme.html</Path>
+            
+        </Node>
+		
+		<Node id="2" type="file" documentType="reference">
+            <Name>MSAIAppClient</Name>
+            <Path>Classes/MSAIAppClient.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/MSAIAppClient.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/MSAIAppClient.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/MSAIAppClient.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAIAppClient.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAIAppClient.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="3" type="file" documentType="reference">
+            <Name>MSAIApplicationInsights</Name>
+            <Path>Classes/MSAIApplicationInsights.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/MSAIApplicationInsights.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/MSAIApplicationInsights.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/MSAIApplicationInsights.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAIApplicationInsights.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAIApplicationInsights.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="4" type="file" documentType="reference">
+            <Name>MSAIChannel</Name>
+            <Path>Classes/MSAIChannel.html</Path>
+            
+        </Node>
+		<Node id="5" type="file" documentType="reference">
+            <Name>MSAIContextHelper</Name>
+            <Path>Classes/MSAIContextHelper.html</Path>
+            
+        </Node>
+		<Node id="6" type="file" documentType="reference">
+            <Name>MSAICrashDetails</Name>
+            <Path>Classes/MSAICrashDetails.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/MSAICrashDetails.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/MSAICrashDetails.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/MSAICrashDetails.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAICrashDetails.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="7" type="file" documentType="reference">
+            <Name>MSAICrashManager</Name>
+            <Path>Classes/MSAICrashManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/MSAICrashManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/MSAICrashManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/MSAICrashManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAICrashManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="8" type="file" documentType="reference">
+            <Name>MSAIHTTPOperation</Name>
+            <Path>Classes/MSAIHTTPOperation.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/MSAIHTTPOperation.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/MSAIHTTPOperation.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAIHTTPOperation.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="9" type="file" documentType="reference">
+            <Name>MSAIPersistence</Name>
+            <Path>Classes/MSAIPersistence.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/MSAIPersistence.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/MSAIPersistence.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAIPersistence.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAIPersistence.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="10" type="file" documentType="reference">
+            <Name>MSAISender</Name>
+            <Path>Classes/MSAISender.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/MSAISender.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/MSAISender.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAISender.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
+            <Name>MSAITelemetryContext</Name>
+            <Path>Classes/MSAITelemetryContext.html</Path>
+            
+        </Node>
+		<Node id="12" type="file" documentType="reference">
+            <Name>MSAITelemetryData</Name>
+            <Path>Classes/MSAITelemetryData.html</Path>
+            
+        </Node>
+		<Node id="13" type="file" documentType="reference">
+            <Name>MSAITelemetryManager</Name>
+            <Path>Classes/MSAITelemetryManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/MSAITelemetryManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/MSAITelemetryManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/MSAITelemetryManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAITelemetryManager.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/MSAITelemetryManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+		
+        <Node id="14" type="file" documentType="reference">
+            <Name>MSAICrashManagerDelegate</Name>
+            <Path>Protocols/MSAICrashManagerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/MSAICrashManagerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/MSAICrashManagerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/MSAICrashManagerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+        <Node id="15" type="file" documentType="reference">
+            <Name>MSAIBinaryImageType</Name>
+            <Path>Constants/MSAIBinaryImageType.html</Path>
+            
+        </Node>
+		<Node id="16" type="file" documentType="reference">
+            <Name>MSAICrashErrorReason</Name>
+            <Path>Constants/MSAICrashErrorReason.html</Path>
+            
+        </Node>
+		<Node id="17" type="file" documentType="reference">
+            <Name>MSAIDataPointType</Name>
+            <Path>Constants/MSAIDataPointType.html</Path>
+            
+        </Node>
+		<Node id="18" type="file" documentType="reference">
+            <Name>MSAIDependencyKind</Name>
+            <Path>Constants/MSAIDependencyKind.html</Path>
+            
+        </Node>
+		<Node id="19" type="file" documentType="reference">
+            <Name>MSAIDependencySourceType</Name>
+            <Path>Constants/MSAIDependencySourceType.html</Path>
+            
+        </Node>
+		<Node id="20" type="file" documentType="reference">
+            <Name>MSAIErrorReason</Name>
+            <Path>Constants/MSAIErrorReason.html</Path>
+            
+        </Node>
+		<Node id="21" type="file" documentType="reference">
+            <Name>MSAIPersistenceType</Name>
+            <Path>Constants/MSAIPersistenceType.html</Path>
+            
+        </Node>
+		<Node id="22" type="file" documentType="reference">
+            <Name>MSAISessionState</Name>
+            <Path>Constants/MSAISessionState.html</Path>
+            
+        </Node>
+		<Node id="23" type="file" documentType="reference">
+            <Name>MSAISeverityLevel</Name>
+            <Path>Constants/MSAISeverityLevel.html</Path>
+            
+        </Node>
+		<Node id="24" type="file" documentType="reference">
+            <Name>MSAITestResult</Name>
+            <Path>Constants/MSAITestResult.html</Path>
+            
+        </Node>
+		
+        <Node id="25" type="file" documentType="reference">
+            <Name>MSAINetworkCompletionBlock</Name>
+            <Path>Blocks/MSAINetworkCompletionBlock.html</Path>
+            
+        </Node>
+        
+	</Library>
+</DocSetNodes>

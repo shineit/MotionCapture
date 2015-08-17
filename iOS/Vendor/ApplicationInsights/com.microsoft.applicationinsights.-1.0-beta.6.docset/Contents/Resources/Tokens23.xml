@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MSAISeverityLevel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MSAISeverityLevel</TokenIdentifier>
+			<Abstract type="html">Enum class for type SeverityLevel.</Abstract>
+			<DeclaredIn>MSAISeverityLevel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAISeverityLevel_verbose</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAISeverityLevel_verbose</Declaration>
+            
+            <DeclaredIn>MSAISeverityLevel.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAISeverityLevel_information</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAISeverityLevel_information</Declaration>
+            
+            <DeclaredIn>MSAISeverityLevel.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAISeverityLevel_warning</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAISeverityLevel_warning</Declaration>
+            
+            <DeclaredIn>MSAISeverityLevel.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAISeverityLevel_error</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAISeverityLevel_error</Declaration>
+            
+            <DeclaredIn>MSAISeverityLevel.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAISeverityLevel_critical</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAISeverityLevel_critical</Declaration>
+            
+            <DeclaredIn>MSAISeverityLevel.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

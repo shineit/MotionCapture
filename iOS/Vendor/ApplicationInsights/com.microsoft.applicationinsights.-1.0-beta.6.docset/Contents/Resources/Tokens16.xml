@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MSAICrashErrorReason.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MSAICrashErrorReason</TokenIdentifier>
+			<Abstract type="html">MSAI Crash Reporter error domain</Abstract>
+			<DeclaredIn>ApplicationInsights.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAICrashErrorUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown error
+   </Abstract>
+            <Declaration>MSAICrashErrorUnknown</Declaration>
+            
+            <DeclaredIn>ApplicationInsights.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAICrashAPIAppVersionRejected</TokenIdentifier>
+            <Abstract type="html">API Server rejected app version
+   </Abstract>
+            <Declaration>MSAICrashAPIAppVersionRejected</Declaration>
+            
+            <DeclaredIn>ApplicationInsights.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAICrashAPIReceivedEmptyResponse</TokenIdentifier>
+            <Abstract type="html">API Server returned empty response
+   </Abstract>
+            <Declaration>MSAICrashAPIReceivedEmptyResponse</Declaration>
+            
+            <DeclaredIn>ApplicationInsights.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAICrashAPIErrorWithStatusCode</TokenIdentifier>
+            <Abstract type="html">Connection error with status code
+   </Abstract>
+            <Declaration>MSAICrashAPIErrorWithStatusCode</Declaration>
+            
+            <DeclaredIn>ApplicationInsights.h</DeclaredIn>
+            
+            <NodeRef refid="16"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

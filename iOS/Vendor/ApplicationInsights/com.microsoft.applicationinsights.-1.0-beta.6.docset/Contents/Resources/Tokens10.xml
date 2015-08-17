@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAISender.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAISender</TokenIdentifier>
+			<Abstract type="html">Utility class that&apos;s responsible for sending a bundle of data to the server</Abstract>
+			<DeclaredIn>MSAISender.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAISender/sendSavedData</TokenIdentifier>
+			<Abstract type="html">Triggers sending the saved data. Does nothing if nothing has been persisted, yet. This method should be called by MSAITelemetryManager on app start.</Abstract>
+			<DeclaredIn>MSAISender.h</DeclaredIn>
+			
+			<Declaration>- (void)sendSavedData</Declaration>
+			
+			
+			<Anchor>//api/name/sendSavedData</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

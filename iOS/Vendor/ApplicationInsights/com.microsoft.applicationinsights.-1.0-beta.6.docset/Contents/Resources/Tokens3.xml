@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAIApplicationInsights.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAIApplicationInsights</TokenIdentifier>
+			<Abstract type="html">This is the main class to setup, configure and start the Application Insights SDK.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/setup</TokenIdentifier>
+			<Abstract type="html">Configures the manager with the instrumentation key from the info.plist and
+initializes all modules. This method should be called before calling start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)setup</Declaration>
+			
+			
+			<Anchor>//api/name/setup</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/setupWithInstrumentationKey:</TokenIdentifier>
+			<Abstract type="html">Configures the manager with a instrumentation key and initializes all modules.
+This method should be called before calling start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)setupWithInstrumentationKey:(NSString *)instrumentationKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instrumentationKey</Name>
+					<Abstract type="html">the instrumentationKey of your Application Insights component</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setupWithInstrumentationKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/start</TokenIdentifier>
+			<Abstract type="html">Starts the manager and runs all modules. Call this after initializing the manager
+and setting up all modules.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setup</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Returns a shared MSAIManager object.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (MSAIApplicationInsights *)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">a singleton MSAIManager instance ready use</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setup</TokenIdentifier>
+			<Abstract type="html">Configures the manager with the instrumentation key from the info.plist and
+initializes all modules. This method should be called before calling start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>- (void)setup</Declaration>
+			
+			
+			<Anchor>//api/name/setup</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setupWithInstrumentationKey:</TokenIdentifier>
+			<Abstract type="html">Configures the manager with a instrumentation key and initializes all modules.
+This method should be called before calling start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>- (void)setupWithInstrumentationKey:(NSString *)instrumentationKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>instrumentationKey</Name>
+					<Abstract type="html">the instrumentationKey of your Application Insights component</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setupWithInstrumentationKey:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/start</TokenIdentifier>
+			<Abstract type="html">Starts the manager and runs all modules. Call this after initializing the manager
+and setting up all modules.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setup</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setServerURL:</TokenIdentifier>
+			<Abstract type="html">Defines the server URL to send data to or request data from. By default this is set
+to the Application Insights servers and there rarely should be a need to modify that.
+If you set your custom server URL, make sure you set the full URL (e.g. https://yourdomain.com/track/)</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *serverURL</Declaration>
+			
+			
+			<Anchor>//api/name/serverURL</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/serverURL</TokenIdentifier>
+			<Abstract type="html">Defines the server URL to send data to or request data from. By default this is set
+to the Application Insights servers and there rarely should be a need to modify that.
+If you set your custom server URL, make sure you set the full URL (e.g. https://yourdomain.com/track/)</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *serverURL</Declaration>
+			
+			
+			<Anchor>//api/name/serverURL</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/serverURL</TokenIdentifier>
+			<Abstract type="html">Defines the server URL to send data to or request data from. By default this is set
+to the Application Insights servers and there rarely should be a need to modify that.
+If you set your custom server URL, make sure you set the full URL (e.g. https://yourdomain.com/track/)</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *serverURL</Declaration>
+			
+			
+			<Anchor>//api/name/serverURL</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setCrashManagerDisabled:</TokenIdentifier>
+			<Abstract type="html">Flag which determines whether the Crash Manager should be disabled. If this flag is
+enabled, then crash reporting is disabled and no crashes will be send. Please note
+that the Crash Manager instance will be initialized anyway, but crash report
+handling (signal and uncaught exception handlers) will not be registered.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isCrashManagerDisabled) BOOL crashManagerDisabled</Declaration>
+			
+			
+			<Anchor>//api/name/crashManagerDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/isCrashManagerDisabled</TokenIdentifier>
+			<Abstract type="html">Flag which determines whether the Crash Manager should be disabled. If this flag is
+enabled, then crash reporting is disabled and no crashes will be send. Please note
+that the Crash Manager instance will be initialized anyway, but crash report
+handling (signal and uncaught exception handlers) will not be registered.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isCrashManagerDisabled) BOOL crashManagerDisabled</Declaration>
+			
+			
+			<Anchor>//api/name/crashManagerDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/crashManagerDisabled</TokenIdentifier>
+			<Abstract type="html">Flag which determines whether the Crash Manager should be disabled. If this flag is
+enabled, then crash reporting is disabled and no crashes will be send. Please note
+that the Crash Manager instance will be initialized anyway, but crash report
+handling (signal and uncaught exception handlers) will not be registered.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isCrashManagerDisabled) BOOL crashManagerDisabled</Declaration>
+			
+			
+			<Anchor>//api/name/crashManagerDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/setCrashManagerDisabled:</TokenIdentifier>
+			<Abstract type="html">Enable (NO) or disable (YES) the crash manager. This should be called before start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)setCrashManagerDisabled:(BOOL)crashManagerDisabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManagerDisabled</Name>
+					<Abstract type="html">Flag which determines whether the Crash Manager should be disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCrashManagerDisabled:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setTelemetryManagerDisabled:</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the Telemetry Manager should be disabled.
+If this flag is enabled, then telemetry collection is disabled and telemetry data will
+not be collected and send.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/MSAITelemetryManager</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, getter=isTelemetryManagerDisabled) BOOL telemetryManagerDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if manager is disabled
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/telemetryManagerDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/isTelemetryManagerDisabled</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the Telemetry Manager should be disabled.
+If this flag is enabled, then telemetry collection is disabled and telemetry data will
+not be collected and send.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/MSAITelemetryManager</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, getter=isTelemetryManagerDisabled) BOOL telemetryManagerDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if manager is disabled
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/telemetryManagerDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/telemetryManagerDisabled</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the Telemetry Manager should be disabled.
+If this flag is enabled, then telemetry collection is disabled and telemetry data will
+not be collected and send.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/MSAITelemetryManager</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, getter=isTelemetryManagerDisabled) BOOL telemetryManagerDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if manager is disabled
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/telemetryManagerDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/setTelemetryManagerDisabled:</TokenIdentifier>
+			<Abstract type="html">Enable (NO) or disable (YES) the telemetry manager. This should be called before start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)setTelemetryManagerDisabled:(BOOL)telemetryManagerDisabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>telemetryManagerDisabled</Name>
+					<Abstract type="html">Flag which determines whether the Telemetry Manager should be disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setTelemetryManagerDisabled:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setAutoPageViewTrackingDisabled:</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether collecting page views automatically should be disabled.
+If YES, auto page view collection is disabled.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAutoPageViewTrackingDisabled) BOOL autoPageViewTrackingDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if manager is disabled
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/autoPageViewTrackingDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/isAutoPageViewTrackingDisabled</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether collecting page views automatically should be disabled.
+If YES, auto page view collection is disabled.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAutoPageViewTrackingDisabled) BOOL autoPageViewTrackingDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if manager is disabled
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/autoPageViewTrackingDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/autoPageViewTrackingDisabled</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether collecting page views automatically should be disabled.
+If YES, auto page view collection is disabled.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAutoPageViewTrackingDisabled) BOOL autoPageViewTrackingDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if manager is disabled
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/autoPageViewTrackingDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/setAutoPageViewTrackingDisabled:</TokenIdentifier>
+			<Abstract type="html">Enable (NO) or disable (YES) auto collection of page views. This should be called before start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)setAutoPageViewTrackingDisabled:(BOOL)autoPageViewTrackingDisabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>autoPageViewTrackingDisabled</Name>
+					<Abstract type="html">Flag which determines whether the page view collection should be disabled</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAutoPageViewTrackingDisabled:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setAutoSessionManagementDisabled:</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether sessions will automatically be renewed when the app starts and goes to the background for more than 20 seconds.
+If YES, sessions are not automatically renewed and the developer has to manually trigger a session renewal or set a specific session ID.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAutoSessionManagementDisabled) BOOL autoSessionManagementDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if automatic session management is disabled.
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/autoSessionManagementDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/isAutoSessionManagementDisabled</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether sessions will automatically be renewed when the app starts and goes to the background for more than 20 seconds.
+If YES, sessions are not automatically renewed and the developer has to manually trigger a session renewal or set a specific session ID.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAutoSessionManagementDisabled) BOOL autoSessionManagementDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if automatic session management is disabled.
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/autoSessionManagementDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/autoSessionManagementDisabled</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether sessions will automatically be renewed when the app starts and goes to the background for more than 20 seconds.
+If YES, sessions are not automatically renewed and the developer has to manually trigger a session renewal or set a specific session ID.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, getter=isAutoSessionManagementDisabled) BOOL autoSessionManagementDisabled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES, if automatic session management is disabled.
+
+@default NO</Abstract></ReturnValue>
+			<Anchor>//api/name/autoSessionManagementDisabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/setAutoSessionManagementDisabled:</TokenIdentifier>
+			<Abstract type="html">Disable (YES) automatic session management and renewal.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)setAutoSessionManagementDisabled:(BOOL)autoSessionManagementDisabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>autoSessionManagementDisabled</Name>
+					<Abstract type="html">Flag that determines whether automatic session management should be disabled.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAutoSessionManagementDisabled:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/setUserWithConfigurationBlock:</TokenIdentifier>
+			<Abstract type="html">Use this method to configure the current user&apos;s context.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)setUserWithConfigurationBlock:(void ( ^ ) ( MSAIUser *user ))userConfigurationBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userConfigurationBlock</Name>
+					<Abstract type="html">This block gets the current user as an input.
+Within the block you can update the user object&apos;s values to up-to-date.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUserWithConfigurationBlock:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setUserWithConfigurationBlock:</TokenIdentifier>
+			<Abstract type="html">Use this method to configure the current user&apos;s context.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>- (void)setUserWithConfigurationBlock:(void ( ^ ) ( MSAIUser *user ))userConfigurationBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userConfigurationBlock</Name>
+					<Abstract type="html">This block gets the current user as an input.
+Within the block you can update the user object&apos;s values to up-to-date.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUserWithConfigurationBlock:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/startNewSession</TokenIdentifier>
+			<Abstract type="html">Manually trigger a new session start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)startNewSession</Declaration>
+			
+			
+			<Anchor>//api/name/startNewSession</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/startNewSession</TokenIdentifier>
+			<Abstract type="html">Manually trigger a new session start.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>- (void)startNewSession</Declaration>
+			
+			
+			<Anchor>//api/name/startNewSession</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/setAppBackgroundTimeBeforeSessionExpires:</TokenIdentifier>
+			<Abstract type="html">Set the time which the app has to have been in the background for before a new session is started.
+This time is only used when automatic session management is not disabled.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (void)setAppBackgroundTimeBeforeSessionExpires:(NSUInteger)appBackgroundTimeBeforeSessionExpires</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>appBackgroundTimeBeforeSessionExpires</Name>
+					<Abstract type="html">The time in seconds the app has to be in the background before a new session is started.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAppBackgroundTimeBeforeSessionExpires:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setAppBackgroundTimeBeforeSessionExpires:</TokenIdentifier>
+			<Abstract type="html">Set the time which the app has to have been in the background for before a new session is started.
+This time is only used when automatic session management is not disabled.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>- (void)setAppBackgroundTimeBeforeSessionExpires:(NSUInteger)appBackgroundTimeBeforeSessionExpires</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>appBackgroundTimeBeforeSessionExpires</Name>
+					<Abstract type="html">The time in seconds the app has to be in the background before a new session is started.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAppBackgroundTimeBeforeSessionExpires:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/renewSessionWithId:</TokenIdentifier>
+			<Abstract type="html">This starts a new session with the given session ID.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/autoSessionManagementDisabled</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (void)renewSessionWithId:(NSString *)sessionId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sessionId</Name>
+					<Abstract type="html">The session ID which should be attached to all future telemetry and crash events.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/renewSessionWithId:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/renewSessionWithId:</TokenIdentifier>
+			<Abstract type="html">This starts a new session with the given session ID.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/autoSessionManagementDisabled</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)renewSessionWithId:(NSString *)sessionId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sessionId</Name>
+					<Abstract type="html">The session ID which should be attached to all future telemetry and crash events.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/renewSessionWithId:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setAppStoreEnvironment:</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the application is installed and running
+from an App Store installation. Returns YES if the app is installed and running
+from the App Store or NO if the app is installed via debug, ad-hoc or enterprise
+distribution</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAppStoreEnvironment) BOOL appStoreEnvironment</Declaration>
+			
+			
+			<Anchor>//api/name/appStoreEnvironment</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/isAppStoreEnvironment</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the application is installed and running
+from an App Store installation. Returns YES if the app is installed and running
+from the App Store or NO if the app is installed via debug, ad-hoc or enterprise
+distribution</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAppStoreEnvironment) BOOL appStoreEnvironment</Declaration>
+			
+			
+			<Anchor>//api/name/appStoreEnvironment</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/appStoreEnvironment</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the application is installed and running
+from an App Store installation. Returns YES if the app is installed and running
+from the App Store or NO if the app is installed via debug, ad-hoc or enterprise
+distribution</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isAppStoreEnvironment) BOOL appStoreEnvironment</Declaration>
+			
+			
+			<Anchor>//api/name/appStoreEnvironment</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/setDebugLogEnabled:</TokenIdentifier>
+			<Abstract type="html">Flag which determines additional logging output should be generated by the manager
+and all modules. This is ignored if the app is running in the App Store and
+reverts to the default value in that case. Default is NO.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isDebugLogEnabled) BOOL debugLogEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/debugLogEnabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/isDebugLogEnabled</TokenIdentifier>
+			<Abstract type="html">Flag which determines additional logging output should be generated by the manager
+and all modules. This is ignored if the app is running in the App Store and
+reverts to the default value in that case. Default is NO.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isDebugLogEnabled) BOOL debugLogEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/debugLogEnabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAIApplicationInsights/debugLogEnabled</TokenIdentifier>
+			<Abstract type="html">Flag which determines additional logging output should be generated by the manager
+and all modules. This is ignored if the app is running in the App Store and
+reverts to the default value in that case. Default is NO.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isDebugLogEnabled) BOOL debugLogEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/debugLogEnabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/version</TokenIdentifier>
+			<Abstract type="html">Returns the SDK Version (CFBundleShortVersionString).</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)version</Declaration>
+			
+			
+			<Anchor>//api/name/version</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/version</TokenIdentifier>
+			<Abstract type="html">Returns the SDK Version (CFBundleShortVersionString).</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)version</Declaration>
+			
+			
+			<Anchor>//api/name/version</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIApplicationInsights/build</TokenIdentifier>
+			<Abstract type="html">Returns the SDK Build (CFBundleVersion) as a string.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)build</Declaration>
+			
+			
+			<Anchor>//api/name/build</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIApplicationInsights/build</TokenIdentifier>
+			<Abstract type="html">Returns the SDK Build (CFBundleVersion) as a string.</Abstract>
+			<DeclaredIn>MSAIApplicationInsights.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)build</Declaration>
+			
+			
+			<Anchor>//api/name/build</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/MSAICrashManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/MSAICrashManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The MSAICrashManagerDelegate formal protocol defines methods further configuring
+the behaviour of MSAICrashManager.</Abstract>
+			<DeclaredIn>MSAICrashManagerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MSAICrashManagerDelegate/crashManagerWillSendCrashReport</TokenIdentifier>
+			<Abstract type="html">Invoked right before sending crash reports will start</Abstract>
+			<DeclaredIn>MSAICrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManagerWillSendCrashReport</Declaration>
+			
+			
+			<Anchor>//api/name/crashManagerWillSendCrashReport</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MSAICrashManagerDelegate/crashManagerDidFailWithError:</TokenIdentifier>
+			<Abstract type="html">Invoked after sending crash reports failed</Abstract>
+			<DeclaredIn>MSAICrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManagerDidFailWithError:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error returned from the NSURLConnection call or kMSAICrashErrorDomain
+with reason of type MSAICrashErrorReason.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/crashManagerDidFailWithError:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MSAICrashManagerDelegate/crashManagerDidFinishSendingCrashReport</TokenIdentifier>
+			<Abstract type="html">Invoked after sending crash reports succeeded</Abstract>
+			<DeclaredIn>MSAICrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManagerDidFinishSendingCrashReport</Declaration>
+			
+			
+			<Anchor>//api/name/crashManagerDidFinishSendingCrashReport</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MSAICrashManagerDelegate/considerAppNotTerminatedCleanlyReportForCrashManager</TokenIdentifier>
+			<Abstract type="html">Define if a report should be considered as a crash report</Abstract>
+			<DeclaredIn>MSAICrashManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)considerAppNotTerminatedCleanlyReportForCrashManager</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the heuristic based detected report should be reported, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/considerAppNotTerminatedCleanlyReportForCrashManager</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

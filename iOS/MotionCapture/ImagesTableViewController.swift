@@ -39,7 +39,7 @@ class ImagesTableViewController: UITableViewController {
     func loadImageList() {
         showLoadingSpinner()
         
-        Alamofire.request(.GET, "http://birdcam.floccul.us/images")
+        Alamofire.request(.GET, "http://birdcam.floccul.us/images/25")
             .responseJSON { _, _, json, _ in
                 let images = JSON(json!)
                 self.imagesModel.clear()
@@ -79,7 +79,8 @@ class ImagesTableViewController: UITableViewController {
         if let ivc = segue.destinationViewController as? ImageViewController {
             let path = self.tableView.indexPathForSelectedRow()!
             let image = imagesModel.images[path.row]
-            ivc.imageURL = NSURL(string: "http://birdcam.floccul.us/\(image.name)")
+            ivc.imageIndex = path.row
+            ivc.imageURL = image.url
             ivc.title = image.formattedTime
         }
     }

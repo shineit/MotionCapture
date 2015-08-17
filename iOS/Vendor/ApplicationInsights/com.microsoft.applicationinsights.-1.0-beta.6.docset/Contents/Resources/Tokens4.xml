@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAIChannel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAIChannel</TokenIdentifier>
+			<Abstract type="html">Prepares telemetry data and forwards it to the persistence layer. Once data has been persisted it will be sent by the sender automatically.</Abstract>
+			<DeclaredIn>MSAIChannel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

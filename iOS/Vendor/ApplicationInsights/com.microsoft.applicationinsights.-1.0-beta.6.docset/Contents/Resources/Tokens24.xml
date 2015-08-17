@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MSAITestResult.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MSAITestResult</TokenIdentifier>
+			<Abstract type="html">Enum class for type TestResult.</Abstract>
+			<DeclaredIn>MSAITestResult.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAITestResult_pass</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAITestResult_pass</Declaration>
+            
+            <DeclaredIn>MSAITestResult.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAITestResult_fail</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAITestResult_fail</Declaration>
+            
+            <DeclaredIn>MSAITestResult.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>
