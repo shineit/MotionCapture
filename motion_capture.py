@@ -28,16 +28,17 @@ def main(argv):
   # Define GPIO to use on Pi
   GPIO_PIR = 17
   GPIO_LED = 22
-  GPIO_BUTTON = 13
+  GPIO_BUTTON = 27
 
   # Create an instance of PiCamera class and configure
   camera = picamera.PiCamera()
   camera.resolution = (1024, 768)
+  camera.vflip = True
 
   # Setup pins as input or output
   GPIO.setup(GPIO_PIR, GPIO.IN)
   GPIO.setup(GPIO_LED, GPIO.OUT)
-  GPIO.setup(GPIO_BUTTON, GPIO.IN)
+  GPIO.setup(GPIO_BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
    
   Current_State  = 0
   Previous_State = 0
@@ -65,7 +66,7 @@ def main(argv):
         button_down_count += 1
 
       # Quit if the button is held down for longer than 2 sec
-      if button_down_count > 200:
+      if button_down_count > 20:
         terminate()
    
       # Read PIR state
@@ -95,8 +96,8 @@ def main(argv):
         # Record previous state
         Previous_State=0
    
-      # Wait for 10 milliseconds
-      time.sleep(0.01)
+      # Wait for 100 milliseconds
+      time.sleep(0.1)
    
   except KeyboardInterrupt:
     terminate()
