@@ -3,6 +3,7 @@
 import time
 import picamera
 import picamera.array
+import RPi.GPIO as GPIO
 import ftplib, sys, getopt
 
 
@@ -21,6 +22,17 @@ def main(argv):
     except ftplib.error_perm:
         print "  530 Login authentication failed"
         sys.exit()
+
+    # Use BCM GPIO references instead of physical pin numbers
+    GPIO.setmode(GPIO.BCM)
+
+    # Define GPIO to use on Pi
+    GPIO_LED = 22
+    GPIO_BUTTON = 27
+
+    # Setup pins as input or output
+    GPIO.setup(GPIO_LED, GPIO.OUT)
+    GPIO.setup(GPIO_BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     
     # Motion detection settings:
     # Threshold (how much a pixel has to change by to be marked as "changed")
@@ -46,12 +58,20 @@ def main(argv):
     print "  Ready."
 
     while True:
+        # Read button state, quit program if pressed
+        button_state = GPIO.input(GPIO_BUTTON)
+        if button_state == 0:
+            GPIO.cleanup()
+            ftp.quit()
+            sys.exit()
+
         # Get comparison image
         image2 = captureTestImage(camera, testWidth, testHeight)
 
         # If there was motion (images are different), save a larger image
         if isImageChanged(image1, image2, threshold, sensitivity):
             print "  Motion detected. Saving photo..."
+            GPIO.output(GPIO_LED, GPIO.HIGH)
             localFileName = "capture.jpg"
             saveImage(camera, saveWidth, saveHeight, localFileName)
             ts = long(time.time() * 1000)
@@ -59,6 +79,7 @@ def main(argv):
             print "  Uploading photo..."
             uploadFileUsingFTP(ftp, localFileName, remoteFileName)
             print "  Ready."
+            GPIO.output(GPIO_LED, GPIO.LOW)
 
         # Swap comparison images
         image1 = image2
