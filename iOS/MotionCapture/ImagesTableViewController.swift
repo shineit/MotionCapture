@@ -45,7 +45,7 @@ class ImagesTableViewController: UITableViewController {
                 self.imagesModel.clear()
                 for (index: String, subJson: JSON) in images {
                     let name = subJson["name"].stringValue
-                    let epochTime = subJson["epochTime"].doubleValue
+                    let epochTime = subJson["epochTime"].doubleValue / 1000.0
                     let image = Image(name: name, epochTime: epochTime)
                     self.imagesModel.addImage(image)
                 }
