@@ -37,6 +37,7 @@ def main(argv):
     # Start the camera
     print "  Starting camera..."
     camera = picamera.PiCamera()
+    camera.vflip = True
     time.sleep(2)
 
     # Get first image
@@ -57,6 +58,7 @@ def main(argv):
             remoteFileName = 'image-' + str(ts) + '.jpg'
             print "  Uploading photo..."
             uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+            print "  Ready."
 
         # Swap comparison images
         image1 = image2
