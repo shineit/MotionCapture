@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MSAIBinaryImageType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MSAIBinaryImageType</TokenIdentifier>
+			<Abstract type="html">ApplicationInsights Crash Reporter error domain</Abstract>
+			<DeclaredIn>MSAICrashDataProvider.h</DeclaredIn>
+            
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIBinaryImageTypeAppBinary</TokenIdentifier>
+            <Abstract type="html">App binary
+   </Abstract>
+            <Declaration>MSAIBinaryImageTypeAppBinary</Declaration>
+            
+            <DeclaredIn>MSAICrashDataProvider.h</DeclaredIn>
+            
+            <NodeRef refid="15"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIBinaryImageTypeAppFramework</TokenIdentifier>
+            <Abstract type="html">App provided framework
+   </Abstract>
+            <Declaration>MSAIBinaryImageTypeAppFramework</Declaration>
+            
+            <DeclaredIn>MSAICrashDataProvider.h</DeclaredIn>
+            
+            <NodeRef refid="15"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIBinaryImageTypeOther</TokenIdentifier>
+            <Abstract type="html">Image not related to the app
+   </Abstract>
+            <Declaration>MSAIBinaryImageTypeOther</Declaration>
+            
+            <DeclaredIn>MSAICrashDataProvider.h</DeclaredIn>
+            
+            <NodeRef refid="15"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

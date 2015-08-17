@@ -10,6 +10,7 @@ import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
     
+    var imageIndex: Int = 0
     var imageURL: NSURL? {
         didSet {
             image = nil
@@ -81,6 +82,37 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillAppear(animated)
         if image == nil {
             fetchImage()
+        }
+    }
+    
+//    func scrollViewDidZoom(scrollView: UIScrollView) {
+//        if (scrollView.zoomScale == scrollView.minimumZoomScale) {
+//            // Not zoomed, so disable scrolling so swipe gesture works
+//            scrollView.scrollEnabled = false
+//        } else {
+//            scrollView.scrollEnabled = true
+//        }
+//    }
+    
+    @IBAction func swipeImage(sender: UISwipeGestureRecognizer) {
+        let imageCount = ImagesModel.sharedInstance.images.count
+        var newImageIndex: Int?
+        
+        if sender.direction == .Left {
+            newImageIndex = imageIndex + 1
+        } else if sender.direction == .Right {
+            newImageIndex = imageIndex - 1
+        }
+        
+        if let newImageIndex = newImageIndex {
+            if newImageIndex != imageIndex &&
+                newImageIndex >= 0 &&
+                newImageIndex < imageCount {
+                    let newImage = ImagesModel.sharedInstance.images[newImageIndex]
+                    imageURL = newImage.url
+                    title = newImage.formattedTime
+                    imageIndex = newImageIndex
+            }
         }
     }
     

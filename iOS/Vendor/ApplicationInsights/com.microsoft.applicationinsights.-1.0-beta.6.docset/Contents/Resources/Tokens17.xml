@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MSAIDataPointType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MSAIDataPointType</TokenIdentifier>
+			<Abstract type="html">Enum class for type DataPointType.</Abstract>
+			<DeclaredIn>MSAIDataPointType.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIDataPointType_measurement</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIDataPointType_measurement</Declaration>
+            
+            <DeclaredIn>MSAIDataPointType.h</DeclaredIn>
+            
+            <NodeRef refid="17"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIDataPointType_aggregation</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIDataPointType_aggregation</Declaration>
+            
+            <DeclaredIn>MSAIDataPointType.h</DeclaredIn>
+            
+            <NodeRef refid="17"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

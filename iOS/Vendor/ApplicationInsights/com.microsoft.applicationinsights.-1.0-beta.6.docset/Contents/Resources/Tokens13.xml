@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAITelemetryManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAITelemetryManager</TokenIdentifier>
+			<Abstract type="html">MSAITelemetryManager is the component of the Application Insights SDK for iOS that is responsible for all things
+that are related to metrics and tracking.
+It provides methods to track custom events, traces, metrics, pageviews and exceptions. You can access them via
+class methods as well as via the sharedManager instance.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/sharedManager</TokenIdentifier>
+			<Abstract type="html">Returns the shared MSAITelemetryManager instance.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedManager</Declaration>
+			
+			<ReturnValue><Abstract type="html">the shared instance</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedManager</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/setCommonProperties:</TokenIdentifier>
+			<Abstract type="html">Set any dictionary of key-value pairs which will then be attached to every telemetry item that is sent.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)setCommonProperties:(NSDictionary *)commonProperties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>commonProperties</Name>
+					<Abstract type="html">The dictionary containing the key-value pairs.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCommonProperties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/setCommonProperties:</TokenIdentifier>
+			<Abstract type="html">The dictionary of key-value pares that will be attached to every telemetry item.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *commonProperties</Declaration>
+			
+			
+			<Anchor>//api/name/commonProperties</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/commonProperties</TokenIdentifier>
+			<Abstract type="html">The dictionary of key-value pares that will be attached to every telemetry item.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *commonProperties</Declaration>
+			
+			
+			<Anchor>//api/name/commonProperties</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAITelemetryManager/commonProperties</TokenIdentifier>
+			<Abstract type="html">The dictionary of key-value pares that will be attached to every telemetry item.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *commonProperties</Declaration>
+			
+			
+			<Anchor>//api/name/commonProperties</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackEventWithName:</TokenIdentifier>
+			<Abstract type="html">Track the event by event name.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackEventWithName:(NSString *)eventName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventName</Name>
+					<Abstract type="html">the name of the event, which should be tracked.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackEventWithName:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackEventWithName:properties:</TokenIdentifier>
+			<Abstract type="html">Track the event by event name and customized properties.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackEventWithName:(NSString *)eventName properties:(nullable NSDictionary *)properties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventName</Name>
+					<Abstract type="html">the name of the event, which should be tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key value pairs with additional info about the event.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackEventWithName:properties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackEventWithName:properties:measurements:</TokenIdentifier>
+			<Abstract type="html">Track the event by event name and customized properties and metrics.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackEventWithName:(NSString *)eventName properties:(nullable NSDictionary *)properties measurements:(nullable NSDictionary *)measurements</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventName</Name>
+					<Abstract type="html">the name of the event, which should be tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key value pairs with additional info about the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>measurements</Name>
+					<Abstract type="html">key value pairs, which contain custom metrics.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackEventWithName:properties:measurements:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackTraceWithMessage:</TokenIdentifier>
+			<Abstract type="html">Track by message.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackTraceWithMessage:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">a message, which should be tracked.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackTraceWithMessage:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackTraceWithMessage:properties:</TokenIdentifier>
+			<Abstract type="html">Track with the message and custom properties.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackTraceWithMessage:(NSString *)message properties:(nullable NSDictionary *)properties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">a message, which should be tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key value pairs with additional info about the trace.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackTraceWithMessage:properties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackMetricWithName:value:</TokenIdentifier>
+			<Abstract type="html">Track metric by name and value.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackMetricWithName:(NSString *)metricName value:(double)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>metricName</Name>
+					<Abstract type="html">the name of the metric.</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">a numeric value, which should be tracked.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackMetricWithName:value:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackMetricWithName:value:properties:</TokenIdentifier>
+			<Abstract type="html">Track metric by name and value and custom properties.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackMetricWithName:(NSString *)metricName value:(double)value properties:(nullable NSDictionary *)properties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>metricName</Name>
+					<Abstract type="html">the name of the metric.</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">a numeric value, which should be tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key value pairs with additional info about the metric.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackMetricWithName:value:properties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackPageView:</TokenIdentifier>
+			<Abstract type="html">Track pageView by name of the page.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackPageView:(NSString *)pageName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pageName</Name>
+					<Abstract type="html">Name of the page/view which is being tracked.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackPageView:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackPageView:duration:</TokenIdentifier>
+			<Abstract type="html">Track pageView by name of the page.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackPageView:(NSString *)pageName duration:(long)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pageName</Name>
+					<Abstract type="html">Name of the page/view which is being tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Time the page has been viewed in milliseconds. This method is ideally called when a page view ends where the time has to be calculated by the developer.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackPageView:duration:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackPageView:duration:properties:</TokenIdentifier>
+			<Abstract type="html">Track pageView by name of the page.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackPageView:(NSString *)pageName duration:(long)duration properties:(nullable NSDictionary *)properties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pageName</Name>
+					<Abstract type="html">Name of the page/view which is being tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">time the page has been viewed. This method is ideally called when a page view ends. The time has to be calculated by the developer.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key-value pairs which can contain additional information about the page view</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackPageView:duration:properties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAITelemetryManager/trackException:</TokenIdentifier>
+			<Abstract type="html">Track handled exception.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)trackException:(NSException *)exception</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>exception</Name>
+					<Abstract type="html">the handled exception, which should be send to the server.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackException:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackEventWithName:</TokenIdentifier>
+			<Abstract type="html">Track the event by event name.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackEventWithName:(NSString *)eventName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventName</Name>
+					<Abstract type="html">the name of the event, which should be tracked.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackEventWithName:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackEventWithName:properties:</TokenIdentifier>
+			<Abstract type="html">Track the event by event name and customized properties.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackEventWithName:(NSString *)eventName properties:(nullable NSDictionary *)properties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventName</Name>
+					<Abstract type="html">the name of the event, which should be tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key value pairs with additional info about the event.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackEventWithName:properties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackEventWithName:properties:measurements:</TokenIdentifier>
+			<Abstract type="html">Track the event by event name and customized properties and metrics.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackEventWithName:(NSString *)eventName properties:(nullable NSDictionary *)properties measurements:(nullable NSDictionary *)measurements</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventName</Name>
+					<Abstract type="html">the name of the event, which should be tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key value pairs with additional info about the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>measurements</Name>
+					<Abstract type="html">key value pairs, which contain custom metrics.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackEventWithName:properties:measurements:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackTraceWithMessage:</TokenIdentifier>
+			<Abstract type="html">Track by message.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackTraceWithMessage:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">a message, which should be tracked.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackTraceWithMessage:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackTraceWithMessage:properties:</TokenIdentifier>
+			<Abstract type="html">Track with the message and custom properties.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackTraceWithMessage:(NSString *)message properties:(nullable NSDictionary *)properties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">a message, which should be tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key value pairs with additional info about the trace.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackTraceWithMessage:properties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackMetricWithName:value:</TokenIdentifier>
+			<Abstract type="html">Track metric by name and value.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackMetricWithName:(NSString *)metricName value:(double)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>metricName</Name>
+					<Abstract type="html">the name of the metric.</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">a numeric value, which should be tracked.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackMetricWithName:value:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackMetricWithName:value:properties:</TokenIdentifier>
+			<Abstract type="html">Track metric by name and value and custom properties.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackMetricWithName:(NSString *)metricName value:(double)value properties:(nullable NSDictionary *)properties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>metricName</Name>
+					<Abstract type="html">the name of the metric.</Abstract>
+				</Parameter><Parameter>
+					<Name>value</Name>
+					<Abstract type="html">a numeric value, which should be tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key value pairs with additional info about the metric.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackMetricWithName:value:properties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackPageView:</TokenIdentifier>
+			<Abstract type="html">Track pageView by name of the page.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackPageView:(NSString *)pageName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pageName</Name>
+					<Abstract type="html">Name of the page/view which is being tracked.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackPageView:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackPageView:duration:</TokenIdentifier>
+			<Abstract type="html">Track pageView by name of the page.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackPageView:(NSString *)pageName duration:(long)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pageName</Name>
+					<Abstract type="html">Name of the page/view which is being tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Time the page has been viewed in milliseconds. This method is ideally called when a page view ends where the time has to be calculated by the developer.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackPageView:duration:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackPageView:duration:properties:</TokenIdentifier>
+			<Abstract type="html">Track pageView by name of the page.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackPageView:(NSString *)pageName duration:(long)duration properties:(nullable NSDictionary *)properties</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pageName</Name>
+					<Abstract type="html">Name of the page/view which is being tracked.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">time the page has been viewed. This method is ideally called when a page view ends. The time has to be calculated by the developer.</Abstract>
+				</Parameter><Parameter>
+					<Name>properties</Name>
+					<Abstract type="html">key-value pairs which can contain additional information about the page view</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackPageView:duration:properties:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAITelemetryManager/trackException:</TokenIdentifier>
+			<Abstract type="html">Track handled exception.</Abstract>
+			<DeclaredIn>MSAITelemetryManager.h</DeclaredIn>
+			
+			<Declaration>- (void)trackException:(NSException *)exception</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>exception</Name>
+					<Abstract type="html">the handled exception, which should be send to the server.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/trackException:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

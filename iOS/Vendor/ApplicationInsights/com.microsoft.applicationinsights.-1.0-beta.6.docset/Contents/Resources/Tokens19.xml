@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MSAIDependencySourceType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MSAIDependencySourceType</TokenIdentifier>
+			<Abstract type="html">Enum class for type DependencySourceType.</Abstract>
+			<DeclaredIn>MSAIDependencySourceType.h</DeclaredIn>
+            
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIDependencySourceType_undefined</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIDependencySourceType_undefined</Declaration>
+            
+            <DeclaredIn>MSAIDependencySourceType.h</DeclaredIn>
+            
+            <NodeRef refid="19"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIDependencySourceType_aic</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIDependencySourceType_aic</Declaration>
+            
+            <DeclaredIn>MSAIDependencySourceType.h</DeclaredIn>
+            
+            <NodeRef refid="19"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIDependencySourceType_apmc</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIDependencySourceType_apmc</Declaration>
+            
+            <DeclaredIn>MSAIDependencySourceType.h</DeclaredIn>
+            
+            <NodeRef refid="19"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

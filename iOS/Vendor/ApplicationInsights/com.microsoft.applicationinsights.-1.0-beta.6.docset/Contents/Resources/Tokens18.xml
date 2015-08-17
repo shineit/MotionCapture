@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MSAIDependencyKind.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MSAIDependencyKind</TokenIdentifier>
+			<Abstract type="html">Enum class for type DependencyKind.</Abstract>
+			<DeclaredIn>MSAIDependencyKind.h</DeclaredIn>
+            
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIDependencyKind_s_q_l</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIDependencyKind_s_q_l</Declaration>
+            
+            <DeclaredIn>MSAIDependencyKind.h</DeclaredIn>
+            
+            <NodeRef refid="18"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIDependencyKind_http</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIDependencyKind_http</Declaration>
+            
+            <DeclaredIn>MSAIDependencyKind.h</DeclaredIn>
+            
+            <NodeRef refid="18"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIDependencyKind_other</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIDependencyKind_other</Declaration>
+            
+            <DeclaredIn>MSAIDependencyKind.h</DeclaredIn>
+            
+            <NodeRef refid="18"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

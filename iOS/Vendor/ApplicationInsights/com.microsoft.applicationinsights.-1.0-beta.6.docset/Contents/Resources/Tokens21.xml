@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MSAIPersistenceType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MSAIPersistenceType</TokenIdentifier>
+			<Abstract type="html">The MSAIPersistenceType determines the way how a bundle is saved.
+Bundles of type MSAIPersistenceTypeHighPriority will be loaded before all bundles if type MSAIPersistenceTypeRegular.</Abstract>
+			<DeclaredIn>MSAIPersistence.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIPersistenceTypeHighPriority</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIPersistenceTypeHighPriority</Declaration>
+            
+            <DeclaredIn>MSAIPersistence.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIPersistenceTypeRegular</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIPersistenceTypeRegular</Declaration>
+            
+            <DeclaredIn>MSAIPersistence.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIPersistenceTypeCrashTemplate</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIPersistenceTypeCrashTemplate</Declaration>
+            
+            <DeclaredIn>MSAIPersistence.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MSAIPersistenceTypeMetaData</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>MSAIPersistenceTypeMetaData</Declaration>
+            
+            <DeclaredIn>MSAIPersistence.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

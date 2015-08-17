@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAIPersistence.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAIPersistence</TokenIdentifier>
+			<Abstract type="html">A simple class that handles serialisation and deserialisation of bundles of data.</Abstract>
+			<DeclaredIn>MSAIPersistence.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MSAIPersistence/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Returns a shared MSAIPersistence object.</Abstract>
+			<DeclaredIn>MSAIPersistence.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">A singleton MSAIPersistence instance ready use</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAIPersistence/newFileURLForPersitenceType:</TokenIdentifier>
+			<Abstract type="html">Creates the path for a file depending on the MSAIPersistenceType.
+The filename includes the timestamp.
+For each MSAIPersistenceType, we create a folder within the app&apos;s Application Support directory directory</Abstract>
+			<DeclaredIn>MSAIPersistence.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)newFileURLForPersitenceType:(MSAIPersistenceType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The MSAIPersistenceType for which a matching file URL will be returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/newFileURLForPersitenceType:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

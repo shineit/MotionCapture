@@ -11,6 +11,9 @@ import UIKit
 class Image {
     
     var name: String
+    var url: NSURL {
+        return NSURL(string: "http://birdcam.floccul.us/\(name)")!
+    }
     var epochTime: Double
     var formattedTime: String {
         let date = NSDate(timeIntervalSince1970: epochTime)

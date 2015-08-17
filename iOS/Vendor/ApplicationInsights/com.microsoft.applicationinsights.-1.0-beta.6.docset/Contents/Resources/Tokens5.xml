@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAIContextHelper.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAIContextHelper</TokenIdentifier>
+			<Abstract type="html">A helper class that allows to persist and retrieve session IDs attached to different timestamps.</Abstract>
+			<DeclaredIn>MSAIContextHelper.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

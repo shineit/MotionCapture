@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAICrashManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAICrashManager</TokenIdentifier>
+			<Abstract type="html">The crash reporting module.</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setIsSetupCorrectly:</TokenIdentifier>
+			<Abstract type="html">Indicates if the MSAICrashManager is initialised correctly.*</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isSetupCorrectly</Declaration>
+			
+			
+			<Anchor>//api/name/isSetupCorrectly</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/isSetupCorrectly</TokenIdentifier>
+			<Abstract type="html">Indicates if the MSAICrashManager is initialised correctly.*</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isSetupCorrectly</Declaration>
+			
+			
+			<Anchor>//api/name/isSetupCorrectly</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/isSetupCorrectly</TokenIdentifier>
+			<Abstract type="html">Indicates if the MSAICrashManager is initialised correctly.*</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL isSetupCorrectly</Declaration>
+			
+			
+			<Anchor>//api/name/isSetupCorrectly</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setCrashManagerDisabled:</TokenIdentifier>
+			<Abstract type="html">Indicates if the CrashManager has been disabled.
+The CrashManager is enabled by default.
+Set this after initialization (you can check the `isSetupCorrectly´property to find out) to disable the CrashManager.
+Usually, this isn&apos;t done directly on MSAICrashManger but the interface provided by `MSAIApplicationInsights´
+@default: NO</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/MSAIApplicationInsights</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, setter=setCrashManagerDisabled:) BOOL isCrashManagerDisabled</Declaration>
+			
+			
+			<Anchor>//api/name/isCrashManagerDisabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/isCrashManagerDisabled</TokenIdentifier>
+			<Abstract type="html">Indicates if the CrashManager has been disabled.
+The CrashManager is enabled by default.
+Set this after initialization (you can check the `isSetupCorrectly´property to find out) to disable the CrashManager.
+Usually, this isn&apos;t done directly on MSAICrashManger but the interface provided by `MSAIApplicationInsights´
+@default: NO</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/MSAIApplicationInsights</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, setter=setCrashManagerDisabled:) BOOL isCrashManagerDisabled</Declaration>
+			
+			
+			<Anchor>//api/name/isCrashManagerDisabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/isCrashManagerDisabled</TokenIdentifier>
+			<Abstract type="html">Indicates if the CrashManager has been disabled.
+The CrashManager is enabled by default.
+Set this after initialization (you can check the `isSetupCorrectly´property to find out) to disable the CrashManager.
+Usually, this isn&apos;t done directly on MSAICrashManger but the interface provided by `MSAIApplicationInsights´
+@default: NO</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/MSAIApplicationInsights</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, setter=setCrashManagerDisabled:) BOOL isCrashManagerDisabled</Declaration>
+			
+			
+			<Anchor>//api/name/isCrashManagerDisabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setMachExceptionHandlerEnabled:</TokenIdentifier>
+			<Abstract type="html">Trap fatal signals via a Mach exception server.</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/debuggerIsAttached</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL machExceptionHandlerEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/machExceptionHandlerEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/machExceptionHandlerEnabled</TokenIdentifier>
+			<Abstract type="html">Trap fatal signals via a Mach exception server.</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/debuggerIsAttached</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL machExceptionHandlerEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/machExceptionHandlerEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/machExceptionHandlerEnabled</TokenIdentifier>
+			<Abstract type="html">Trap fatal signals via a Mach exception server.</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/debuggerIsAttached</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL machExceptionHandlerEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/machExceptionHandlerEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setOnDeviceSymbolicationEnabled:</TokenIdentifier>
+			<Abstract type="html">Enable on device symbolication for system symbols</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL onDeviceSymbolicationEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/onDeviceSymbolicationEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/onDeviceSymbolicationEnabled</TokenIdentifier>
+			<Abstract type="html">Enable on device symbolication for system symbols</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL onDeviceSymbolicationEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/onDeviceSymbolicationEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/onDeviceSymbolicationEnabled</TokenIdentifier>
+			<Abstract type="html">Enable on device symbolication for system symbols</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL onDeviceSymbolicationEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/onDeviceSymbolicationEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setAppNotTerminatingCleanlyDetectionEnabled:</TokenIdentifier>
+			<Abstract type="html">EXPERIMENTAL: Enable heuristics to detect the app not terminating cleanly</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intf/MSAICrashManagerDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL appNotTerminatingCleanlyDetectionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/appNotTerminatingCleanlyDetectionEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/appNotTerminatingCleanlyDetectionEnabled</TokenIdentifier>
+			<Abstract type="html">EXPERIMENTAL: Enable heuristics to detect the app not terminating cleanly</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intf/MSAICrashManagerDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL appNotTerminatingCleanlyDetectionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/appNotTerminatingCleanlyDetectionEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/appNotTerminatingCleanlyDetectionEnabled</TokenIdentifier>
+			<Abstract type="html">EXPERIMENTAL: Enable heuristics to detect the app not terminating cleanly</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intf/MSAICrashManagerDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL appNotTerminatingCleanlyDetectionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/appNotTerminatingCleanlyDetectionEnabled</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setCrashCallbacks:</TokenIdentifier>
+			<Abstract type="html">Set the callbacks that will be executed prior to program termination after a crash has occurred</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>- (void)setCrashCallbacks:(MSAICrashManagerCallbacks *)callbacks</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callbacks</Name>
+					<Abstract type="html">A pointer to an initialized PLCrashReporterCallback structure, see https://www.plcrashreporter.org/documentation/api/v1.2-rc2/structplcrashreporter_callbacks.html</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCrashCallbacks:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setDidCrashInLastSession:</TokenIdentifier>
+			<Abstract type="html">Indicates if the app crash in the previous session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) BOOL didCrashInLastSession</Declaration>
+			
+			
+			<Anchor>//api/name/didCrashInLastSession</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/didCrashInLastSession</TokenIdentifier>
+			<Abstract type="html">Indicates if the app crash in the previous session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) BOOL didCrashInLastSession</Declaration>
+			
+			
+			<Anchor>//api/name/didCrashInLastSession</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didCrashInLastSession</TokenIdentifier>
+			<Abstract type="html">Indicates if the app crash in the previous session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) BOOL didCrashInLastSession</Declaration>
+			
+			
+			<Anchor>//api/name/didCrashInLastSession</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setLastSessionCrashDetails:</TokenIdentifier>
+			<Abstract type="html">Provides details about the crash that occured in the last app session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) MSAICrashDetails *lastSessionCrashDetails</Declaration>
+			
+			
+			<Anchor>//api/name/lastSessionCrashDetails</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+			<Abstract type="html">Provides details about the crash that occured in the last app session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) MSAICrashDetails *lastSessionCrashDetails</Declaration>
+			
+			
+			<Anchor>//api/name/lastSessionCrashDetails</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+			<Abstract type="html">Provides details about the crash that occured in the last app session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) MSAICrashDetails *lastSessionCrashDetails</Declaration>
+			
+			
+			<Anchor>//api/name/lastSessionCrashDetails</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setTimeintervalCrashInLastSessionOccured:</TokenIdentifier>
+			<Abstract type="html">Provides the time between startup and crash in seconds</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didCrashInLastSession</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intf/MSAICrashManagerDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeintervalCrashInLastSessionOccured</Declaration>
+			
+			
+			<Anchor>//api/name/timeintervalCrashInLastSessionOccured</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/timeintervalCrashInLastSessionOccured</TokenIdentifier>
+			<Abstract type="html">Provides the time between startup and crash in seconds</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didCrashInLastSession</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intf/MSAICrashManagerDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeintervalCrashInLastSessionOccured</Declaration>
+			
+			
+			<Anchor>//api/name/timeintervalCrashInLastSessionOccured</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/timeintervalCrashInLastSessionOccured</TokenIdentifier>
+			<Abstract type="html">Provides the time between startup and crash in seconds</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didCrashInLastSession</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intf/MSAICrashManagerDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeintervalCrashInLastSessionOccured</Declaration>
+			
+			
+			<Anchor>//api/name/timeintervalCrashInLastSessionOccured</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setDidReceiveMemoryWarningInLastSession:</TokenIdentifier>
+			<Abstract type="html">Indicates if the app did receive a low memory warning in the last session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/appNotTerminatingCleanlyDetectionEnabled</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) BOOL didReceiveMemoryWarningInLastSession</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarningInLastSession</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+			<Abstract type="html">Indicates if the app did receive a low memory warning in the last session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/appNotTerminatingCleanlyDetectionEnabled</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) BOOL didReceiveMemoryWarningInLastSession</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarningInLastSession</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+			<Abstract type="html">Indicates if the app did receive a low memory warning in the last session</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/appNotTerminatingCleanlyDetectionEnabled</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/lastSessionCrashDetails</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) BOOL didReceiveMemoryWarningInLastSession</Declaration>
+			
+			
+			<Anchor>//api/name/didReceiveMemoryWarningInLastSession</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/setDebuggerIsAttached:</TokenIdentifier>
+			<Abstract type="html">Detect if a debugger is attached to the app process</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=getIsDebuggerAttached) BOOL debuggerIsAttached</Declaration>
+			
+			<ReturnValue><Abstract type="html">BOOL if the debugger is attached on app startup</Abstract></ReturnValue>
+			<Anchor>//api/name/debuggerIsAttached</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/getIsDebuggerAttached</TokenIdentifier>
+			<Abstract type="html">Detect if a debugger is attached to the app process</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=getIsDebuggerAttached) BOOL debuggerIsAttached</Declaration>
+			
+			<ReturnValue><Abstract type="html">BOOL if the debugger is attached on app startup</Abstract></ReturnValue>
+			<Anchor>//api/name/debuggerIsAttached</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/debuggerIsAttached</TokenIdentifier>
+			<Abstract type="html">Detect if a debugger is attached to the app process</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=getIsDebuggerAttached) BOOL debuggerIsAttached</Declaration>
+			
+			<ReturnValue><Abstract type="html">BOOL if the debugger is attached on app startup</Abstract></ReturnValue>
+			<Anchor>//api/name/debuggerIsAttached</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashManager/generateTestCrash</TokenIdentifier>
+			<Abstract type="html">Lets the app crash for easy testing of the SDK</Abstract>
+			<DeclaredIn>MSAICrashManager.h</DeclaredIn>
+			
+			<Declaration>- (void)generateTestCrash</Declaration>
+			
+			
+			<Anchor>//api/name/generateTestCrash</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

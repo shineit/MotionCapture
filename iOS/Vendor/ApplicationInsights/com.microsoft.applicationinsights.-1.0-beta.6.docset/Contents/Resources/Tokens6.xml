@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MSAICrashDetails.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MSAICrashDetails</TokenIdentifier>
+			<Abstract type="html">Provides details about the crash that occured in the previous app session</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setIncidentIdentifier:</TokenIdentifier>
+			<Abstract type="html">UUID for the crash report</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *incidentIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/incidentIdentifier</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/incidentIdentifier</TokenIdentifier>
+			<Abstract type="html">UUID for the crash report</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *incidentIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/incidentIdentifier</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/incidentIdentifier</TokenIdentifier>
+			<Abstract type="html">UUID for the crash report</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *incidentIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/incidentIdentifier</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setReporterKey:</TokenIdentifier>
+			<Abstract type="html">UUID for the app installation on the device</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *reporterKey</Declaration>
+			
+			
+			<Anchor>//api/name/reporterKey</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/reporterKey</TokenIdentifier>
+			<Abstract type="html">UUID for the app installation on the device</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *reporterKey</Declaration>
+			
+			
+			<Anchor>//api/name/reporterKey</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/reporterKey</TokenIdentifier>
+			<Abstract type="html">UUID for the app installation on the device</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *reporterKey</Declaration>
+			
+			
+			<Anchor>//api/name/reporterKey</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setSignal:</TokenIdentifier>
+			<Abstract type="html">Signal that caused the crash</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/signal</TokenIdentifier>
+			<Abstract type="html">Signal that caused the crash</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/signal</TokenIdentifier>
+			<Abstract type="html">Signal that caused the crash</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setExceptionName:</TokenIdentifier>
+			<Abstract type="html">Exception name that triggered the crash, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *exceptionName</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionName</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/exceptionName</TokenIdentifier>
+			<Abstract type="html">Exception name that triggered the crash, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *exceptionName</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionName</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/exceptionName</TokenIdentifier>
+			<Abstract type="html">Exception name that triggered the crash, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *exceptionName</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionName</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setExceptionReason:</TokenIdentifier>
+			<Abstract type="html">Exception reason, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *exceptionReason</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionReason</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/exceptionReason</TokenIdentifier>
+			<Abstract type="html">Exception reason, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *exceptionReason</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionReason</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/exceptionReason</TokenIdentifier>
+			<Abstract type="html">Exception reason, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *exceptionReason</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionReason</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setAppStartTime:</TokenIdentifier>
+			<Abstract type="html">Date and time the app started, nil if unknown</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *appStartTime</Declaration>
+			
+			
+			<Anchor>//api/name/appStartTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/appStartTime</TokenIdentifier>
+			<Abstract type="html">Date and time the app started, nil if unknown</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *appStartTime</Declaration>
+			
+			
+			<Anchor>//api/name/appStartTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/appStartTime</TokenIdentifier>
+			<Abstract type="html">Date and time the app started, nil if unknown</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *appStartTime</Declaration>
+			
+			
+			<Anchor>//api/name/appStartTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setCrashTime:</TokenIdentifier>
+			<Abstract type="html">Date and time the crash occured, nil if unknown</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *crashTime</Declaration>
+			
+			
+			<Anchor>//api/name/crashTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/crashTime</TokenIdentifier>
+			<Abstract type="html">Date and time the crash occured, nil if unknown</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *crashTime</Declaration>
+			
+			
+			<Anchor>//api/name/crashTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/crashTime</TokenIdentifier>
+			<Abstract type="html">Date and time the crash occured, nil if unknown</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *crashTime</Declaration>
+			
+			
+			<Anchor>//api/name/crashTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setOsVersion:</TokenIdentifier>
+			<Abstract type="html">Operation System version string the app was running on when it crashed.</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/osVersion</TokenIdentifier>
+			<Abstract type="html">Operation System version string the app was running on when it crashed.</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/osVersion</TokenIdentifier>
+			<Abstract type="html">Operation System version string the app was running on when it crashed.</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setOsBuild:</TokenIdentifier>
+			<Abstract type="html">Operation System build string the app was running on when it crashed</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *osBuild</Declaration>
+			
+			
+			<Anchor>//api/name/osBuild</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/osBuild</TokenIdentifier>
+			<Abstract type="html">Operation System build string the app was running on when it crashed</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *osBuild</Declaration>
+			
+			
+			<Anchor>//api/name/osBuild</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/osBuild</TokenIdentifier>
+			<Abstract type="html">Operation System build string the app was running on when it crashed</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *osBuild</Declaration>
+			
+			
+			<Anchor>//api/name/osBuild</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/setAppBuild:</TokenIdentifier>
+			<Abstract type="html">CFBundleVersion value of the app that crashed</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *appBuild</Declaration>
+			
+			
+			<Anchor>//api/name/appBuild</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/appBuild</TokenIdentifier>
+			<Abstract type="html">CFBundleVersion value of the app that crashed</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *appBuild</Declaration>
+			
+			
+			<Anchor>//api/name/appBuild</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MSAICrashDetails/appBuild</TokenIdentifier>
+			<Abstract type="html">CFBundleVersion value of the app that crashed</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *appBuild</Declaration>
+			
+			
+			<Anchor>//api/name/appBuild</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MSAICrashDetails/isAppKill</TokenIdentifier>
+			<Abstract type="html">Indicates if the app was killed while being in foreground from the iOS</Abstract>
+			<DeclaredIn>MSAICrashDetails.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/appNotTerminatingCleanlyDetectionEnabled</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/MSAICrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)isAppKill</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the details represent an app kill instead of a crash</Abstract></ReturnValue>
+			<Anchor>//api/name/isAppKill</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

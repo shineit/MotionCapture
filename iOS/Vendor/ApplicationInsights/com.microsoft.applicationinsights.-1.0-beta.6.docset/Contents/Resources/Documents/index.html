@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title></title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="index.html">ApplicationInsights 1.0-beta.6 </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="index.html">Microsoft</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="hierarchy.html">Hierarchy</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title"></h1>
+
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h2>Introduction</h2>
+
+<p>This project provides an iOS SDK for Application Insights. <a href="http://azure.microsoft.com/en-us/services/application-insights/">Application Insights</a> is a service that allows developers to keep their applications available, performing, and succeeding. This module allows you to send telemetry of various kinds (events, traces, exceptions, etc.) to the Application Insights service where your data can be visualized in the Azure Portal.</p>
+
+<p>The following features are currently supported:</p>
+
+<ol>
+<li><p><strong>Send telemetry data:</strong> The SDK allows you to send telemetry of various kinds (event, trace, measurement, etc.) to the Application Insights service where they can be visualized in the Azure Portal.</p></li>
+<li><p><strong>Collect crash reports:</strong> If you app crashes, a crash log with the same format as from the Apple Crash Reporter is written to the device&rsquo;s storage. If the user starts the app again, he is asked to submit the crash report to Application Insights. This works for both beta and live apps, i.e. those submitted to the App Store!</p></li>
+</ol>
+
+
+<p>The main SDK class is <code>MSAIAppInsights</code>. It initializes all modules and provides access to them, so they can be further adjusted if required. Additionally all modules provide their own protocols.</p>
+
+<h2>Howto</h2>
+
+<p>Please have a look at our <a href="docs/docs/Readme.html">Readme</a></p>
+
+<h2>Repository</h2>
+
+<p>We&rsquo;re on <a href="https://github.com/Microsoft/ApplicationInsights-iOS">Github</a></p>
+
+<h2>Contact</h2>
+
+<p>If you have further questions or are running into trouble that cannot be resolved by any of the steps here, feel free to contact us at <a href="mailto:AppInsights-ios@microsoft.com">AppInsights-iOS@microsoft.com</a></p>
+						
+						
+					</div>
+					
+
+					<div class="index-container">
+						
+						<div class="index-column">
+							<h2 class="index-title"></h2>
+							<ul>
+								
+								<li><a href="docs/docs/Readme.html">Readme</a></li>
+								
+							</ul>
+						</div>
+						
+
+						
+						<div class="index-column">
+							<h2 class="index-title"></h2>
+							<ul>
+								
+								<li><a href="Classes/MSAIAppClient.html">MSAIAppClient</a></li>
+								
+								<li><a href="Classes/MSAIApplicationInsights.html">MSAIApplicationInsights</a></li>
+								
+								<li><a href="Classes/MSAIChannel.html">MSAIChannel</a></li>
+								
+								<li><a href="Classes/MSAIContextHelper.html">MSAIContextHelper</a></li>
+								
+								<li><a href="Classes/MSAICrashDetails.html">MSAICrashDetails</a></li>
+								
+								<li><a href="Classes/MSAICrashManager.html">MSAICrashManager</a></li>
+								
+								<li><a href="Classes/MSAIHTTPOperation.html">MSAIHTTPOperation</a></li>
+								
+								<li><a href="Classes/MSAIPersistence.html">MSAIPersistence</a></li>
+								
+								<li><a href="Classes/MSAISender.html">MSAISender</a></li>
+								
+								<li><a href="Classes/MSAITelemetryContext.html">MSAITelemetryContext</a></li>
+								
+								<li><a href="Classes/MSAITelemetryData.html">MSAITelemetryData</a></li>
+								
+								<li><a href="Classes/MSAITelemetryManager.html">MSAITelemetryManager</a></li>
+								
+							</ul>
+						</div>
+						
+
+						
+						<div class="index-column">
+							
+							<h2 class="index-title"></h2>
+							<ul>
+								
+								<li><a href="Protocols/MSAICrashManagerDelegate.html">MSAICrashManagerDelegate</a></li>
+								
+							</ul>
+							
+
+							
+							<h2 class="index-title"></h2>
+							<ul>
+								
+									<li><a href="Constants/MSAIBinaryImageType.html">MSAIBinaryImageType</a></li>
+								
+									<li><a href="Constants/MSAICrashErrorReason.html">MSAICrashErrorReason</a></li>
+								
+									<li><a href="Constants/MSAIDataPointType.html">MSAIDataPointType</a></li>
+								
+									<li><a href="Constants/MSAIDependencyKind.html">MSAIDependencyKind</a></li>
+								
+									<li><a href="Constants/MSAIDependencySourceType.html">MSAIDependencySourceType</a></li>
+								
+									<li><a href="Constants/MSAIErrorReason.html">MSAIErrorReason</a></li>
+								
+									<li><a href="Constants/MSAIPersistenceType.html">MSAIPersistenceType</a></li>
+								
+									<li><a href="Constants/MSAISessionState.html">MSAISessionState</a></li>
+								
+									<li><a href="Constants/MSAISeverityLevel.html">MSAISeverityLevel</a></li>
+								
+									<li><a href="Constants/MSAITestResult.html">MSAITestResult</a></li>
+								
+							</ul>
+							
+
+							
+						</div>
+						
+					</div>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2015 Microsoft. All rights reserved. Updated: 2015-08-08</p>
+							
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="js/script.js"></script>
+</body>
+</html>
