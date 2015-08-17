@@ -10,7 +10,6 @@ from PIL import Image
 # Motion detection settings:
 # Threshold (how much a pixel has to change by to be marked as "changed")
 # Sensitivity (how many changed pixels before capturing an image)
-# ForceCapture (whether to force an image to be captured every forceCaptureTime seconds)
 threshold = 10
 sensitivity = 20
 
@@ -39,9 +38,6 @@ def saveImage(width, height):
 # Get first image
 image1, buffer1 = captureTestImage()
 
-# Reset last capture time
-lastCapture = time.time()
-
 while (True):
     # Get comparison image
     image2, buffer2 = captureTestImage()
@@ -57,7 +53,6 @@ while (True):
        
     # Save an image if pixels changed
     if changedPixels > sensitivity:
-        lastCapture = time.time()
         saveImage(saveWidth, saveHeight)
     
     # Swap comparison buffers
