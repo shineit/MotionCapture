@@ -43,6 +43,10 @@ def main(argv):
     # Get first image
     image1 = captureTestImage(camera, testWidth, testHeight)
 
+    # Always store the most recent image with no motion
+    noMotionImage = image1
+    noMotionCount = 0
+
     print "  Ready."
 
     while True:
@@ -50,7 +54,7 @@ def main(argv):
         image2 = captureTestImage(camera, testWidth, testHeight)
 
         # If there was motion (images are different), save a larger image
-        if isImageChanged(image1, image2, threshold, sensitivity):
+        if isImageChanged(image1, image2, threshold, sensitivity) and isImageChanged(noMotionImage, image2, threshold, sensitivity):
             print "  Motion detected. Saving photo..."
             localFileName = "capture.jpg"
             saveImage(camera, saveWidth, saveHeight, localFileName)
@@ -59,6 +63,11 @@ def main(argv):
             print "  Uploading photo..."
             uploadFileUsingFTP(ftp, localFileName, remoteFileName)
             print "  Ready."
+        else:
+            noMotionCount += 1
+            if noMotionCount >= 10:
+                noMotionImage = image2
+                noMotionCount = 0
 
         # Swap comparison images
         image1 = image2
