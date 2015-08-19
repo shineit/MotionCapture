@@ -5,6 +5,7 @@ import picamera
 import picamera.array
 import RPi.GPIO as GPIO
 import ftplib, sys, getopt
+import Image as img
 
 
 def main(argv):
@@ -17,7 +18,8 @@ def main(argv):
         print '  Usage: ./motion_capture_v2.py <FTP password>'
         sys.exit(2)
     try:
-        ftp = ftplib.FTP(ftpHostname, ftpUsername, argv[0])
+        ftpPassword = argv[0]
+        ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
         print "  Successfully authenticated to FTP server"
     except ftplib.error_perm:
         print "  530 Login authentication failed"
@@ -33,7 +35,10 @@ def main(argv):
     # Setup pins as input or output
     GPIO.setup(GPIO_LED, GPIO.OUT)
     GPIO.setup(GPIO_BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    
+
+    # Initialize LED to off
+    GPIO.output(GPIO_LED, GPIO.LOW)
+        
     # Motion detection settings:
     # Threshold (how much a pixel has to change by to be marked as "changed")
     # Sensitivity (how many changed pixels before capturing an image)
@@ -43,6 +48,8 @@ def main(argv):
     # File settings
     testWidth = 100
     testHeight = 75
+    thumbWidth = 240
+    thumbHeight = 180
     saveWidth = 1024
     saveHeight = 768
 
@@ -75,15 +82,32 @@ def main(argv):
         # If there was motion (images are different), save a larger image
         if isImageChanged(image1, image2, threshold, sensitivity) and isImageChanged(noMotionImage, image2, threshold, sensitivity):
             print "  Motion detected. Saving photo..."
+            # Turn on LED
             GPIO.output(GPIO_LED, GPIO.HIGH)
+            # Save large image
             localFileName = "capture.jpg"
             saveImage(camera, saveWidth, saveHeight, localFileName)
+            # Resize large image into thumbnail
+            localThumbFileName = "capture-thumb.jpg"
+            largeImage = img.open(localFileName)
+            largeImage.thumbnail((thumbWidth, thumbHeight), img.ANTIALIAS)
+            largeImage.save(localThumbFileName)
+            # Determine remote file names
             ts = long(time.time() * 1000)
             remoteFileName = 'image-' + str(ts) + '.jpg'
+            remoteThumbFileName = 'thumb-' + str(ts) + '.jpg'
             print "  Uploading photo..."
-            uploadFileUsingFTP(ftp, localFileName, remoteFileName)
-            print "  Ready."
+            try:
+                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+                uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
+            except ftplib.error_temp:
+                # If FTP session timed out, recreate and reattempt the upload
+                ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
+                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+                uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
+            # Turn off LED
             GPIO.output(GPIO_LED, GPIO.LOW)
+            print "  Ready."
         else:
             noMotionCount += 1
             if noMotionCount >= 10:
