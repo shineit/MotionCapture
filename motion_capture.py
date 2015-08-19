@@ -1,117 +1,161 @@
 #!/usr/bin/python
 
- # Import required Python libraries
-import RPi.GPIO as GPIO
+import time
 import picamera
-import ftplib, time, sys, getopt
+import picamera.array
+import RPi.GPIO as GPIO
+import ftplib, sys, getopt
+import Image as img
+
 
 def main(argv):
-  global session
-   
-  print "Motion Capture (CTRL-C to exit)"
-  
-  # Use command line argument to try to login to FTP
-  if len(argv) < 1:
-    print 'Usage: ./motion_capture.py <FTP password>'
-    sys.exit(2)
-  try:
-    session = ftplib.FTP('floccul.us', 'birdcam@floccul.us', argv[0])
-    print "Successfully authenticated to FTP server"
-  except ftplib.error_perm:
-    print "530 Login authentication failed"
-    sys.exit()
+    # Configure FTP
+    ftpHostname = "floccul.us"
+    ftpUsername = "birdcam@floccul.us"
     
-  # Use BCM GPIO references
-  # instead of physical pin numbers
-  GPIO.setmode(GPIO.BCM)
-   
-  # Define GPIO to use on Pi
-  GPIO_PIR = 17
-  GPIO_LED = 22
-  GPIO_BUTTON = 27
+    # Use command line argument to try to login to FTP
+    if len(argv) < 1:
+        print '  Usage: ./motion_capture.py <FTP password>'
+        sys.exit(2)
+    try:
+        ftpPassword = argv[0]
+        ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
+        print "  Successfully authenticated to FTP server"
+    except ftplib.error_perm:
+        print "  530 Login authentication failed"
+        sys.exit()
 
-  # Create an instance of PiCamera class and configure
-  camera = picamera.PiCamera()
-  camera.resolution = (1024, 768)
-  camera.vflip = True
+    # Use BCM GPIO references instead of physical pin numbers
+    GPIO.setmode(GPIO.BCM)
 
-  # Setup pins as input or output
-  GPIO.setup(GPIO_PIR, GPIO.IN)
-  GPIO.setup(GPIO_LED, GPIO.OUT)
-  GPIO.setup(GPIO_BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-   
-  Current_State  = 0
-  Previous_State = 0
-   
-  try:
-   
-    print "Waiting for PIR to settle ..."
-   
-    # Loop until PIR output is 0
-    while GPIO.input(GPIO_PIR)==1:
-      Current_State  = 0
-   
-    print "  Ready"
+    # Define GPIO to use on Pi
+    GPIO_LED = 22
+    GPIO_BUTTON = 27
 
-    button_down_count = 0
-   
-    # Loop until users quits with CTRL-C, or presses button
-    while True :
+    # Setup pins as input or output
+    GPIO.setup(GPIO_LED, GPIO.OUT)
+    GPIO.setup(GPIO_BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-      # Read button state
-      button_state = GPIO.input(GPIO_BUTTON)
-      if button_state == 1:
-        button_down_count = 0
-      else:
-        button_down_count += 1
+    # Initialize LED to off
+    GPIO.output(GPIO_LED, GPIO.LOW)
+        
+    # Motion detection settings:
+    # Threshold (how much a pixel has to change by to be marked as "changed")
+    # Sensitivity (how many changed pixels before capturing an image)
+    threshold = 25
+    sensitivity = 25
 
-      # Quit if the button is held down for longer than 2 sec
-      if button_down_count > 20:
-        terminate()
-   
-      # Read PIR state
-      Current_State = GPIO.input(GPIO_PIR)
-   
-      if Current_State==1 and Previous_State==0:
-        # PIR is triggered, turn on indicator LED
-        print "  Motion detected!"
-        GPIO.output(GPIO_LED, GPIO.HIGH)
-        # Take a photo with the camera
-        camera.capture("image.jpg")
-        print "  Photo captured."
-        # Upload the photo to the server
-        file = open('image.jpg', 'rb')
-        ts = long(time.time() * 1000)
-        filename = 'image-' + str(ts) + '.jpg'
-        session.storbinary('STOR ' + filename, file)
-        file.close()
-        print "  Photo uploaded as " + filename
-        # Record previous state
-        Previous_State=1
-      elif Current_State==0 and Previous_State==1:
-        # PIR has returned to ready state
-        print "  Ready"
-        # Turn off indicator LED
-        GPIO.output(GPIO_LED, GPIO.LOW)
-        # Record previous state
-        Previous_State=0
-   
-      # Wait for 100 milliseconds
-      time.sleep(0.1)
-   
-  except KeyboardInterrupt:
-    terminate()
+    # File settings
+    testWidth = 100
+    testHeight = 75
+    thumbWidth = 240
+    thumbHeight = 180
+    saveWidth = 1024
+    saveHeight = 768
+
+    # Start the camera
+    print "  Starting camera..."
+    camera = picamera.PiCamera()
+    camera.vflip = True
+    time.sleep(2)
+
+    # Get first image
+    image1 = captureTestImage(camera, testWidth, testHeight)
+
+    # Always store the most recent image with no motion
+    noMotionImage = image1
+    noMotionCount = 0
+
+    print "  Ready."
+
+    while True:
+        # Read button state, quit program if pressed
+        button_state = GPIO.input(GPIO_BUTTON)
+        if button_state == 0:
+            GPIO.cleanup()
+            ftp.quit()
+            sys.exit()
+
+        # Get comparison image
+        image2 = captureTestImage(camera, testWidth, testHeight)
+
+        # If there was motion (images are different), save a larger image
+        if isImageChanged(image1, image2, threshold, sensitivity) and isImageChanged(noMotionImage, image2, threshold, sensitivity):
+            print "  Motion detected. Saving photo..."
+            # Turn on LED
+            GPIO.output(GPIO_LED, GPIO.HIGH)
+            # Save large image
+            localFileName = "capture.jpg"
+            saveImage(camera, saveWidth, saveHeight, localFileName)
+            # Resize large image into thumbnail
+            localThumbFileName = "capture-thumb.jpg"
+            largeImage = img.open(localFileName)
+            largeImage.thumbnail((thumbWidth, thumbHeight), img.ANTIALIAS)
+            largeImage.save(localThumbFileName)
+            # Determine remote file names
+            ts = long(time.time() * 1000)
+            remoteFileName = 'image-' + str(ts) + '.jpg'
+            remoteThumbFileName = 'thumb-' + str(ts) + '.jpg'
+            print "  Uploading photo..."
+            try:
+                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+                uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
+            except ftplib.error_temp:
+                # If FTP session timed out, recreate and reattempt the upload
+                ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
+                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+                uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
+            # Turn off LED
+            GPIO.output(GPIO_LED, GPIO.LOW)
+            print "  Ready."
+        else:
+            noMotionCount += 1
+            if noMotionCount >= 10:
+                noMotionImage = image2
+                noMotionCount = 0
+
+        # Swap comparison images
+        image1 = image2
+
+        # Slight delay to not take too many pictures
+        time.sleep(1)
 
 
-def terminate():
-  global session
-  
-  print "  Quit"
-  # Reset GPIO settings
-  GPIO.cleanup()
-  # Close FTP session
-  session.quit()
-  return
+# Capture a small test image (for motion detection) and return as pixel array
+def captureTestImage(camera, width, height):
+    camera.resolution = (width, height)
+    with picamera.array.PiRGBArray(camera) as stream:
+        camera.capture(stream, format='rgb')
+        return stream.array
+
+# Save an image from the camera to a file
+def saveImage(camera, width, height, name):
+    camera.resolution = (width, height)
+    camera.capture(name)
+
+# Upload a file to the FTP server
+def uploadFileUsingFTP(ftp, localFileName, remoteFileName):
+    file = open(localFileName, 'rb')
+    ftp.storbinary('STOR ' + remoteFileName, file)
+    file.close()
+
+# Return whether or not the two images are different
+def isImageChanged(imgArray1, imgArray2, threshold, sensitivity):
+    # Check that the two arrays are the same size
+    if len(imgArray1) != len(imgArray2) and len(imgArray1[0]) != len(imgArray2[0]):
+        return False
+    
+    # Count the number of changed pixels
+    changedPixels = 0
+    for x in xrange(0, len(imgArray1)):
+        for y in xrange(0, len(imgArray1[0])):
+            # Just check green channel as it's the highest quality channel
+            pixdiff = abs(int(imgArray1[x,y][1]) - int(imgArray2[x,y][1]))
+            if pixdiff > threshold:
+                changedPixels += 1
+                if changedPixels > sensitivity:
+                    return True
+    return False
 
 
 if __name__ == "__main__":
