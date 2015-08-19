@@ -36,7 +36,7 @@ $app->get('/images(/:maxNum)', function ($maxNum = -1) {
             break;
         }
         $epochTime = intval(substr($fileName, 6, 13));
-        $image = array("name" => $fileName, "epochTime" => $epochTime);
+        $image = array("name" => $fileName, "thumb" => "thumb-".$epochTime.".jpg", "epochTime" => $epochTime);
         array_push($images, $image);
         $imageCount++;
     }

@@ -26,7 +26,7 @@ function addImage(args) {
     div.setAttribute('data-timestamp', getFormattedDate(args.epochTime) + ' - ' + timeSince(args.epochTime) + ' ago');
     div.className = 'imageContainer';
     var img = document.createElement('img');
-    img.src = baseUrl + args.name;
+    img.src = baseUrl + args.thumb;
     div.appendChild(img);
     imagesNode.appendChild(div);
 };
