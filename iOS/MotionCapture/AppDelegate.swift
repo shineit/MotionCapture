@@ -17,9 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Setup and start Application Insights
         MSAIApplicationInsights.setup()
         MSAIApplicationInsights.start()
+        
+        // Register for push notifications
+        let userNotificationTypes: UIUserNotificationType = .Alert | .Badge | .Sound
+        let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println("Did Register for Remote Notifications with Device Token: \(deviceToken)")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println("Did Fail to Register for Remote Notifications")
+        println("\(error), \(error.localizedDescription)")
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        println(__FUNCTION__)
     }
 
     func applicationWillResignActive(application: UIApplication) {
