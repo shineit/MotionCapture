@@ -17,7 +17,8 @@ def main(argv):
         print '  Usage: ./motion_capture_v2.py <FTP password>'
         sys.exit(2)
     try:
-        ftp = ftplib.FTP(ftpHostname, ftpUsername, argv[0])
+        ftpPassword = argv[0]
+        ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
         print "  Successfully authenticated to FTP server"
     except ftplib.error_perm:
         print "  530 Login authentication failed"
@@ -81,7 +82,12 @@ def main(argv):
             ts = long(time.time() * 1000)
             remoteFileName = 'image-' + str(ts) + '.jpg'
             print "  Uploading photo..."
-            uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+            try:
+                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+            except ftplib.error_temp:
+                # If FTP session timed out, recreate and reattempt the upload
+                ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
+                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
             print "  Ready."
             GPIO.output(GPIO_LED, GPIO.LOW)
         else:
