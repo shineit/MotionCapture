@@ -183,7 +183,8 @@ def sendPushNotification(application_id, rest_api_key):
             "where": {},
             "data": {
                 "alert": "Motion detected!",
-                "badge": "Increment"
+                "badge": "Increment",
+                "content-available": "1"
             }
         }), {
             "X-Parse-Application-Id": application_id,
