@@ -54,6 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotificationTypes(types)
         }
         
+        // Connect to Microsoft Band
+        let clients = MSBClientManager.sharedManager().attachedClients()
+        self.band = clients.first as? MSBClient
+        if let band = self.band {
+            MSBClientManager.sharedManager().connectClient(self.band)
+            println("[MSB] Connecting to Band...")
+        } else {
+            println("[MSB] No Bands attached.")
+        }
+        
         return true
     }
     
@@ -73,8 +83,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
+        if let band = self.band {
+            sendNotificationToBand(band)
+        }
         if application.applicationState == UIApplicationState.Inactive {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+        }
+    }
+    
+    func sendNotificationToBand(band: MSBClient) {
+        if (band.isDeviceConnected) {
+            let tileId = NSUUID(UUIDString: "be2066df-306f-438e-860c-f82a8bc0bd6a")
+            let tileName = "MotionCapture Tile"
+            let tileIcon = MSBIcon(UIImage: UIImage(named: "MSBIcon-46"), error: nil)
+            let smallIcon = MSBIcon(UIImage: UIImage(named: "MSBIcon-24"), error: nil)
+            let tile = MSBTile(id: tileId, name: tileName, tileIcon: tileIcon, smallIcon: smallIcon, error: nil)
+            
+            self.band?.tileManager.addTile(tile, completionHandler: { (error) -> Void in
+                if (error == nil || error?.code == MSBErrorType.TileAlreadyExist.rawValue) {
+                    println("[MSB] Sending notification...")
+                    self.band?.notificationManager.sendMessageWithTileID(tile.tileId, title: "MotionCapture", body: "Motion detected!", timeStamp: NSDate(), flags: .ShowDialog, completionHandler: { (error) -> Void in
+                        if (error == nil) {
+                            println("[MSB] Successfully sent notification!")
+                        } else {
+                            println(error.localizedDescription)
+                        }
+                    })
+                } else {
+                    println(error.localizedDescription)
+                }
+            })
         }
     }
 

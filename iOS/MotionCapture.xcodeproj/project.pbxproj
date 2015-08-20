@@ -20,8 +20,6 @@
 		685138011B84E5660017F433 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138001B84E5660017F433 /* libsqlite3.dylib */; };
 		685138041B858C050017F433 /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138031B858C050017F433 /* MicrosoftBandKit_iOS.framework */; };
 		685138061B8593090017F433 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138051B8593090017F433 /* CoreBluetooth.framework */; };
-		685138081B85937C0017F433 /* MSBIcon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 685138071B85937C0017F433 /* MSBIcon-24.png */; };
-		6851380A1B8593830017F433 /* MSBicon-46.png in Resources */ = {isa = PBXBuildFile; fileRef = 685138091B8593830017F433 /* MSBicon-46.png */; };
 		689011421B802C760007F062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011411B802C760007F062 /* AppDelegate.swift */; };
 		689011471B802C760007F062 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689011451B802C760007F062 /* Main.storyboard */; };
 		689011491B802C760007F062 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 689011481B802C760007F062 /* Images.xcassets */; };
@@ -61,8 +59,6 @@
 		685138001B84E5660017F433 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		685138031B858C050017F433 /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftBandKit_iOS.framework; path = Vendor/MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 		685138051B8593090017F433 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		685138071B85937C0017F433 /* MSBIcon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MSBIcon-24.png"; sourceTree = "<group>"; };
-		685138091B8593830017F433 /* MSBicon-46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MSBicon-46.png"; sourceTree = "<group>"; };
 		6851380B1B861CBF0017F433 /* MotionCapture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotionCapture-Bridging-Header.h"; sourceTree = "<group>"; };
 		6890113C1B802C760007F062 /* MotionCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		689011401B802C760007F062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,8 +150,6 @@
 		6890113F1B802C760007F062 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				685138071B85937C0017F433 /* MSBIcon-24.png */,
-				685138091B8593830017F433 /* MSBicon-46.png */,
 				689011401B802C760007F062 /* Info.plist */,
 				6851380B1B861CBF0017F433 /* MotionCapture-Bridging-Header.h */,
 			);
@@ -309,11 +303,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6851380A1B8593830017F433 /* MSBicon-46.png in Resources */,
 				689011471B802C760007F062 /* Main.storyboard in Resources */,
 				6890114C1B802C760007F062 /* LaunchScreen.xib in Resources */,
 				689011491B802C760007F062 /* Images.xcassets in Resources */,
-				685138081B85937C0017F433 /* MSBIcon-24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
