@@ -32,15 +32,19 @@ def main(argv):
     Config.read("config.ini")
 
     # Setup Parse (push notification service)
-    application_id = Config.get("Parse", "application_id")
-    rest_api_key = Config.get("Parse", "rest_api_key")
+    try:    
+        application_id = Config.get("Parse", "application_id")
+        rest_api_key = Config.get("Parse", "rest_api_key")
+        pushNotificationsEnabled = True
+    except:
+        pushNotificationsEnabled = False
 
     # Use BCM GPIO references instead of physical pin numbers
     GPIO.setmode(GPIO.BCM)
 
     # Define GPIO to use on Pi
-    GPIO_LED = 22
-    GPIO_BUTTON = 27
+    GPIO_LED = 22 # activity indicator
+    GPIO_BUTTON = 27 # exit program button
 
     # Setup pins as input or output
     GPIO.setup(GPIO_LED, GPIO.OUT)
@@ -116,21 +120,9 @@ def main(argv):
                 uploadFileUsingFTP(ftp, localFileName, remoteFileName)
                 uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
             # Send a push notification
-            print "  Sending push notification..."
-            connection = httplib.HTTPSConnection('api.parse.com', 443)
-            connection.connect()
-            connection.request('POST', '/1/push', json.dumps({
-                    "where": {},
-                    "data": {
-                        "alert": "Motion detected!",
-                        "badge": "Increment"
-                    }
-                }), {
-                    "X-Parse-Application-Id": application_id,
-                    "X-Parse-REST-API-Key": rest_api_key, 
-                    "Content-Type": "application/json"
-                })
-            result = json.loads(connection.getresponse().read())
+            if pushNotificationsEnabled:
+                print "  Sending push notification..."
+                sendPushNotification(application_id, rest_api_key)
             # Turn off LED
             GPIO.output(GPIO_LED, GPIO.LOW)
             print "  Ready."
@@ -183,6 +175,22 @@ def isImageChanged(imgArray1, imgArray2, threshold, sensitivity):
                     return True
     return False
 
+# Send a push notification to the Parse service (for iOS app)
+def sendPushNotification(application_id, rest_api_key):
+    connection = httplib.HTTPSConnection('api.parse.com', 443)
+    connection.connect()
+    connection.request('POST', '/1/push', json.dumps({
+            "where": {},
+            "data": {
+                "alert": "Motion detected!",
+                "badge": "Increment"
+            }
+        }), {
+            "X-Parse-Application-Id": application_id,
+            "X-Parse-REST-API-Key": rest_api_key,
+            "Content-Type": "application/json"
+        })
+    return json.loads(connection.getresponse().read())
 
 if __name__ == "__main__":
   main(sys.argv[1:])
