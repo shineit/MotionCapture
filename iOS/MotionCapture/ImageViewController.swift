@@ -85,15 +85,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-//    func scrollViewDidZoom(scrollView: UIScrollView) {
-//        if (scrollView.zoomScale == scrollView.minimumZoomScale) {
-//            // Not zoomed, so disable scrolling so swipe gesture works
-//            scrollView.scrollEnabled = false
-//        } else {
-//            scrollView.scrollEnabled = true
-//        }
-//    }
-    
     @IBAction func swipeImage(sender: UISwipeGestureRecognizer) {
         let imageCount = ImagesModel.sharedInstance.images.count
         var newImageIndex: Int?
