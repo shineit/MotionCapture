@@ -5,7 +5,7 @@ window.onload = function() {
     imagesNode = document.getElementById('images');
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", baseUrl + "images", true);
+    xhr.open("GET", baseUrl + "images/25", true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);

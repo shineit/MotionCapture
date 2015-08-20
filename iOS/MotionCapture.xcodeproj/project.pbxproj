@@ -15,10 +15,13 @@
 		685137F51B84E4C80017F433 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685137F41B84E4C80017F433 /* CoreLocation.framework */; };
 		685137F71B84E4CF0017F433 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685137F61B84E4CF0017F433 /* QuartzCore.framework */; };
 		685137F91B84E54D0017F433 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685137F81B84E54D0017F433 /* Security.framework */; };
-		685137FB1B84E5520017F433 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685137FA1B84E5520017F433 /* StoreKit.framework */; };
 		685137FD1B84E5590017F433 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685137FC1B84E5590017F433 /* SystemConfiguration.framework */; };
 		685137FF1B84E55F0017F433 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 685137FE1B84E55F0017F433 /* libz.dylib */; };
 		685138011B84E5660017F433 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138001B84E5660017F433 /* libsqlite3.dylib */; };
+		685138041B858C050017F433 /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138031B858C050017F433 /* MicrosoftBandKit_iOS.framework */; };
+		685138061B8593090017F433 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138051B8593090017F433 /* CoreBluetooth.framework */; };
+		685138081B85937C0017F433 /* MSBIcon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 685138071B85937C0017F433 /* MSBIcon-24.png */; };
+		6851380A1B8593830017F433 /* MSBicon-46.png in Resources */ = {isa = PBXBuildFile; fileRef = 685138091B8593830017F433 /* MSBicon-46.png */; };
 		689011421B802C760007F062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011411B802C760007F062 /* AppDelegate.swift */; };
 		689011471B802C760007F062 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689011451B802C760007F062 /* Main.storyboard */; };
 		689011491B802C760007F062 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 689011481B802C760007F062 /* Images.xcassets */; };
@@ -53,10 +56,14 @@
 		685137F41B84E4C80017F433 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		685137F61B84E4CF0017F433 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		685137F81B84E54D0017F433 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		685137FA1B84E5520017F433 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		685137FC1B84E5590017F433 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		685137FE1B84E55F0017F433 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		685138001B84E5660017F433 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		685138031B858C050017F433 /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftBandKit_iOS.framework; path = Vendor/MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
+		685138051B8593090017F433 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		685138071B85937C0017F433 /* MSBIcon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MSBIcon-24.png"; sourceTree = "<group>"; };
+		685138091B8593830017F433 /* MSBicon-46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MSBicon-46.png"; sourceTree = "<group>"; };
+		6851380B1B861CBF0017F433 /* MotionCapture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotionCapture-Bridging-Header.h"; sourceTree = "<group>"; };
 		6890113C1B802C760007F062 /* MotionCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		689011401B802C760007F062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689011411B802C760007F062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,12 +86,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685138061B8593090017F433 /* CoreBluetooth.framework in Frameworks */,
 				685138011B84E5660017F433 /* libsqlite3.dylib in Frameworks */,
 				685137FF1B84E55F0017F433 /* libz.dylib in Frameworks */,
 				685137FD1B84E5590017F433 /* SystemConfiguration.framework in Frameworks */,
-				685137FB1B84E5520017F433 /* StoreKit.framework in Frameworks */,
 				685137F91B84E54D0017F433 /* Security.framework in Frameworks */,
 				685137F71B84E4CF0017F433 /* QuartzCore.framework in Frameworks */,
+				685138041B858C050017F433 /* MicrosoftBandKit_iOS.framework in Frameworks */,
 				685137F51B84E4C80017F433 /* CoreLocation.framework in Frameworks */,
 				685137F31B84E4C20017F433 /* CoreGraphics.framework in Frameworks */,
 				685137F11B84E4BC0017F433 /* CFNetwork.framework in Frameworks */,
@@ -146,7 +154,10 @@
 		6890113F1B802C760007F062 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				685138071B85937C0017F433 /* MSBIcon-24.png */,
+				685138091B8593830017F433 /* MSBicon-46.png */,
 				689011401B802C760007F062 /* Info.plist */,
+				6851380B1B861CBF0017F433 /* MotionCapture-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 		689011691B81696E0007F062 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				685138031B858C050017F433 /* MicrosoftBandKit_iOS.framework */,
 				685137EC1B84E4820017F433 /* Parse.framework */,
 				685137EA1B84E47C0017F433 /* Bolts.framework */,
 				6890116A1B81697E0007F062 /* ApplicationInsights.framework */,
@@ -181,10 +193,10 @@
 		97DFA2D496C1EE62194BAB74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				685138051B8593090017F433 /* CoreBluetooth.framework */,
 				685138001B84E5660017F433 /* libsqlite3.dylib */,
 				685137FE1B84E55F0017F433 /* libz.dylib */,
 				685137FC1B84E5590017F433 /* SystemConfiguration.framework */,
-				685137FA1B84E5520017F433 /* StoreKit.framework */,
 				685137F81B84E54D0017F433 /* Security.framework */,
 				685137F61B84E4CF0017F433 /* QuartzCore.framework */,
 				685137F41B84E4C80017F433 /* CoreLocation.framework */,
@@ -258,6 +270,14 @@
 					6890113B1B802C760007F062 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 83U7U2U9D6;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					689011501B802C770007F062 = {
 						CreatedOnToolsVersion = 6.4;
@@ -289,9 +309,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6851380A1B8593830017F433 /* MSBicon-46.png in Resources */,
 				689011471B802C760007F062 /* Main.storyboard in Resources */,
 				6890114C1B802C760007F062 /* LaunchScreen.xib in Resources */,
 				689011491B802C760007F062 /* Images.xcassets in Resources */,
+				685138081B85937C0017F433 /* MSBIcon-24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ba8df446-d3fe-43de-ae02-8aaf66a634ab";
+				SWIFT_OBJC_BRIDGING_HEADER = "MotionCapture/MotionCapture-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -521,6 +544,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ba8df446-d3fe-43de-ae02-8aaf66a634ab";
+				SWIFT_OBJC_BRIDGING_HEADER = "MotionCapture/MotionCapture-Bridging-Header.h";
 			};
 			name = Release;
 		};
