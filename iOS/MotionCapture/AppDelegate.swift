@@ -99,10 +99,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let smallIcon = MSBIcon(UIImage: UIImage(named: "MSBIcon-24"), error: nil)
             let tile = MSBTile(id: tileId, name: tileName, tileIcon: tileIcon, smallIcon: smallIcon, error: nil)
             
-            self.band?.tileManager.addTile(tile, completionHandler: { (error) -> Void in
+            band.tileManager.addTile(tile, completionHandler: { (error) -> Void in
                 if (error == nil || error?.code == MSBErrorType.TileAlreadyExist.rawValue) {
                     println("[MSB] Sending notification...")
-                    self.band?.notificationManager.sendMessageWithTileID(tile.tileId, title: "MotionCapture", body: "Motion detected!", timeStamp: NSDate(), flags: .ShowDialog, completionHandler: { (error) -> Void in
+                    band.notificationManager.sendMessageWithTileID(tile.tileId, title: "MotionCapture", body: "Motion detected!", timeStamp: NSDate(), flags: .ShowDialog, completionHandler: { (error) -> Void in
                         if (error == nil) {
                             println("[MSB] Successfully sent notification!")
                         } else {
