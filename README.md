@@ -25,8 +25,20 @@ GET /images/{max}
 
 Included are two client programs for viewing the saved images. One is a web Javascript client and the other is an iOS app.
 
+To configure Parse push notifications in the Python script, create a file named *config.ini* in the repo root with:
+```
+[Parse]
+application_id=<application id>
+rest_api_key=<rest api key>
+```
+Where you replace <application id> with your Parse application ID and <rest api key> with your Parse application's REST API key.
+
 ## Future Features
 
 - Modified Python script that only saves images to the Pi instead of uploading, and the Pi would function as the whole backend server.
 - Option in Python script to limit the number of images saved in a time frame in case there's a lot of motion in one period of time.
-- Option for push notifications in iOS app to be notified about motion.
+- Microsoft Band notification for detected motion
+
+## Credits
+
+- Paul Tynes from The Noun Project (https://thenounproject.com/term/webcam/5490/)
