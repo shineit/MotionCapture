@@ -6,6 +6,8 @@ import picamera.array
 import RPi.GPIO as GPIO
 import ftplib, sys, getopt
 import Image as img
+import ConfigParser
+import json, httplib
 
 
 def main(argv):
@@ -24,6 +26,14 @@ def main(argv):
     except ftplib.error_perm:
         print "  530 Login authentication failed"
         sys.exit()
+
+    # Read config.ini
+    Config = ConfigParser.ConfigParser()
+    Config.read("config.ini")
+
+    # Setup Parse (push notification service)
+    application_id = Config.get("Parse", "application_id")
+    rest_api_key = Config.get("Parse", "rest_api_key")
 
     # Use BCM GPIO references instead of physical pin numbers
     GPIO.setmode(GPIO.BCM)
@@ -105,6 +115,22 @@ def main(argv):
                 ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
                 uploadFileUsingFTP(ftp, localFileName, remoteFileName)
                 uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
+            # Send a push notification
+            print "  Sending push notification..."
+            connection = httplib.HTTPSConnection('api.parse.com', 443)
+            connection.connect()
+            connection.request('POST', '/1/push', json.dumps({
+                    "where": {},
+                    "data": {
+                        "alert": "Motion detected!",
+                        "badge": "Increment"
+                    }
+                }), {
+                    "X-Parse-Application-Id": application_id,
+                    "X-Parse-REST-API-Key": rest_api_key, 
+                    "Content-Type": "application/json"
+                })
+            result = json.loads(connection.getresponse().read())
             # Turn off LED
             GPIO.output(GPIO_LED, GPIO.LOW)
             print "  Ready."
