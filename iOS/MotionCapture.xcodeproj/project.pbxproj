@@ -138,17 +138,17 @@
 		6890113E1B802C760007F062 /* MotionCapture */ = {
 			isa = PBXGroup;
 			children = (
+				689011411B802C760007F062 /* AppDelegate.swift */,
+				689011451B802C760007F062 /* Main.storyboard */,
 				685138131B864F440017F433 /* AlamofireExtensions.swift */,
 				6851380C1B8642C70017F433 /* ImageCollectionViewController.swift */,
 				689011651B80338D0007F062 /* ImageViewController.swift */,
-				689011411B802C760007F062 /* AppDelegate.swift */,
-				689011451B802C760007F062 /* Main.storyboard */,
-				689011481B802C760007F062 /* Images.xcassets */,
-				6890114A1B802C760007F062 /* LaunchScreen.xib */,
-				6890113F1B802C760007F062 /* Supporting Files */,
 				689011631B802E7F0007F062 /* ImagesModel.swift */,
 				689011671B803B400007F062 /* Image.swift */,
 				6851380E1B86463F0017F433 /* ImageCollectionViewCell.swift */,
+				689011481B802C760007F062 /* Images.xcassets */,
+				6890114A1B802C760007F062 /* LaunchScreen.xib */,
+				6890113F1B802C760007F062 /* Supporting Files */,
 			);
 			path = MotionCapture;
 			sourceTree = "<group>";

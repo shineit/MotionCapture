@@ -14,6 +14,8 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     let imagesModel = ImagesModel.sharedInstance
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var timeLabelContainer: UIView!
+    var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +24,39 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         // self.clearsSelectionOnViewWillAppear = false
 
         // Do any additional setup after loading the view.
+        
+        navigationController?.hidesBarsOnTap = true
+        collectionView.scrollsToTop = true
+        
+        // Prevent weird margin at the top of collection view
+        automaticallyAdjustsScrollViewInsets = false
+        
+        // Add blur and vibrancy effects to the time label
+        let blurEffect = UIBlurEffect(style: .ExtraLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        timeLabelContainer.addSubview(blurView)
+        addAutoLayoutToFillContainer(timeLabelContainer, subView: blurView)
+        
+        let vibrancyView = UIVisualEffectView(effect: UIVibrancyEffect(forBlurEffect: blurEffect))
+        blurView.contentView.addSubview(vibrancyView)
+        addAutoLayoutToFillContainer(blurView, subView: vibrancyView)
+        
+        timeLabel = UILabel()
+        timeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 24)
+        timeLabel.textAlignment = .Center
+        vibrancyView.contentView.addSubview(timeLabel)
+        addAutoLayoutToFillContainer(vibrancyView, subView: timeLabel)
+        
         loadImageList()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func refreshButton(sender: UIBarButtonItem) {
+        loadImageList()
     }
     
     func loadImageList() {
@@ -44,12 +73,29 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
                 }
                 self.imagesModel.sortByTime()
                 self.collectionView?.reloadData()
+                self.updateTimeLabelText()
         }
+    }
+    
+    // Update the time label with how long ago the top visible picture was taken
+    func updateTimeLabelText() {
+        let visibleItems = collectionView.indexPathsForVisibleItems()
+        if (visibleItems.count > 0) {
+            let topVisibleItem = visibleItems.reduce(visibleItems[0], combine: { $0.row < $1.row ? $0 : $1 }) as! NSIndexPath
+            timeLabel.text = imagesModel.images[topVisibleItem.row].timeSince
+        }
+    }
+    
+    func addAutoLayoutToFillContainer(view: UIView, subView: UIView) {
+        subView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        view.addConstraint(NSLayoutConstraint(item: subView, attribute: .Leading, relatedBy: .Equal, toItem: view, attribute: .Leading, multiplier: 1.0, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: subView, attribute: .Trailing, relatedBy: .Equal, toItem: view, attribute: .Trailing, multiplier: 1.0, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: subView, attribute: .Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1.0, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: subView, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1.0, constant: 0))
     }
     
     // Resize cells when orientation changes
     
-
     // MARK: UICollectionViewDataSource
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,6 +118,12 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
             let width = collectionView.bounds.size.width
             let height = width * 0.75
             return CGSizeMake(width, height)
+    }
+    
+    // MARK: UICollectionViewDelegate
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        updateTimeLabelText()
     }
 
 }

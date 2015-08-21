@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="trN-oT-y6J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4Np-Mz-M5N">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcg-q0-GmB">
-                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="644"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="gxP-DM-Zso" appends="YES" id="eiG-I9-WeP"/>
@@ -58,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="1837" y="-28"/>
         </scene>
-        <!--Image Collection View Controller-->
+        <!--Bird Cam-->
         <scene sceneID="92k-8Z-DZ3">
             <objects>
                 <viewController id="trN-oT-y6J" customClass="ImageCollectionViewController" customModule="MotionCapture" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PJn-Lw-eqC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="uzD-Sa-uC6">
                                     <size key="itemSize" width="240" height="180"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -114,20 +114,55 @@
                                     <outlet property="delegate" destination="trN-oT-y6J" id="UT0-ES-On0"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VzB-Lv-UTL">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8ig-Rk-7us"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VzB-Lv-UTL" secondAttribute="trailing" constant="-16" id="Jgq-qz-VoI"/>
+                            <constraint firstItem="VzB-Lv-UTL" firstAttribute="top" secondItem="ykI-Sg-9DK" secondAttribute="bottom" id="Rp1-VG-Nc5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PJn-Lw-eqC" secondAttribute="trailing" constant="-16" id="YLh-cP-ruU"/>
-                            <constraint firstItem="PJn-Lw-eqC" firstAttribute="top" secondItem="ykI-Sg-9DK" secondAttribute="bottom" constant="-20" id="b3k-Ex-2Uh"/>
+                            <constraint firstItem="PJn-Lw-eqC" firstAttribute="top" secondItem="ykI-Sg-9DK" secondAttribute="bottom" id="b3k-Ex-2Uh"/>
+                            <constraint firstItem="VzB-Lv-UTL" firstAttribute="leading" secondItem="w1u-11-Gox" secondAttribute="leadingMargin" constant="-16" id="jqi-3a-x8n"/>
                             <constraint firstItem="QMU-3J-KBu" firstAttribute="top" secondItem="PJn-Lw-eqC" secondAttribute="bottom" id="qZL-uM-agd"/>
                             <constraint firstItem="PJn-Lw-eqC" firstAttribute="leading" secondItem="w1u-11-Gox" secondAttribute="leadingMargin" constant="-16" id="sQa-hN-0he"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Bird Cam" id="M1z-Cy-vdP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="OhZ-I6-ySl">
+                            <connections>
+                                <action selector="refreshButton:" destination="trN-oT-y6J" id="eAz-p5-hFh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="PJn-Lw-eqC" id="JRX-Sb-XJf"/>
+                        <outlet property="timeLabelContainer" destination="VzB-Lv-UTL" id="l7g-c7-9Bh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0c-bR-2Lg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2231" y="-703"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T1r-cr-it3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Np-Mz-M5N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9PF-ns-H1g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="trN-oT-y6J" kind="relationship" relationship="rootViewController" id="5fy-3v-qdT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpl-5X-G8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1419" y="-703"/>
         </scene>

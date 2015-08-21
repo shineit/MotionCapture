@@ -28,12 +28,5 @@ class ImageCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
-//        visualEffectView.frame = timeLabel.bounds
-//        timeLabel.addSubview(visualEffectView)
-//    }
 
 }
