@@ -46,10 +46,29 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         
         loadImageList()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Subscribe to motion detection notifications
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "controller:", name: "motionDetected", object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func controller(notification: NSNotification) {
+        if (notification.name == "motionDetected") {
+            loadImageList()
+        }
     }
     
     func loadImageList() {

@@ -88,6 +88,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         if application.applicationState == UIApplicationState.Inactive {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+        } else if application.applicationState == UIApplicationState.Active {
+            // Send notification that motion was detected
+            NSNotificationCenter.defaultCenter().postNotificationName("motionDetected", object: nil)
+            
+            // Set the badge notification count to 0
+            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         }
     }
     
