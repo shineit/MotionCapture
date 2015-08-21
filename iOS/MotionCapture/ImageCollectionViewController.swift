@@ -16,6 +16,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timeLabelContainer: UIView!
     var timeLabel: UILabel!
+    var refreshTimer: NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +53,16 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         
         // Subscribe to motion detection notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "controller:", name: "motionDetected", object: nil)
+        
+        // Check for new images every few seconds
+        refreshTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "loadImageList", userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
         NSNotificationCenter.defaultCenter().removeObserver(self)
+        refreshTimer.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,6 +80,16 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         Alamofire.request(.GET, "\(Constants.hostname)/images/25")
             .responseJSON { _, _, json, _ in
                 let images = JSON(json!)
+                
+                // Only proceed if the result is different than the current model
+                if (images.count > 0 && self.imagesModel.images.count > 0) {
+                    let oldFirstImageName = self.imagesModel.images[0].name
+                    let newFirstImageName = images[0]["name"].stringValue
+                    if (oldFirstImageName == newFirstImageName) {
+                        return
+                    }
+                }
+                
                 self.imagesModel.clear()
                 for (index: String, subJson: JSON) in images {
                     let name = subJson["name"].stringValue
