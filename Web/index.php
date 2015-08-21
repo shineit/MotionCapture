@@ -9,9 +9,9 @@ $app->get('/', function () use ($app) {
     $app->redirect("index.html");
 });
 
-// [ { "name": "image-1234567890.jpg", "epochTime": 1234567890} ]
+// [ { "name": "image-1234567890.jpg", "thumb": "thumb-1234567890.jpg", "epochTime": 1234567890} ]
 $app->get('/images(/:maxNum)', function ($maxNum = -1) {
-    $dir = getcwd();
+    $dir = getcwd() . "/img";
     $files = scandir($dir);
 
     // Filter list of files down to only images matching the correct name format
@@ -35,8 +35,8 @@ $app->get('/images(/:maxNum)', function ($maxNum = -1) {
         if ($maxNum != -1 && $imageCount >= $maxNum) {
             break;
         }
-        $epochTime = intval(substr($fileName, 6, 13));
-        $image = array("name" => $fileName, "thumb" => "thumb-".$epochTime.".jpg", "epochTime" => $epochTime);
+        $epochTime = substr($fileName, 6, 13);
+        $image = array("name" => "img/".$fileName, "thumb" => "img/thumb-".$epochTime.".jpg", "epochTime" => $epochTime);
         array_push($images, $image);
         $imageCount++;
     }

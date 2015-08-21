@@ -4,13 +4,29 @@ import time
 import picamera
 import picamera.array
 import RPi.GPIO as GPIO
-import sys
+import ftplib, sys, getopt
 import Image as img
 import ConfigParser
 import json, httplib
 
 
 def main(argv):
+    # Configure FTP
+    ftpHostname = "floccul.us"
+    ftpUsername = "birdcam@floccul.us"
+    
+    # Use command line argument to try to login to FTP
+    if len(argv) < 1:
+        print '  Usage: ./motion_capture_ftp.py <FTP password>'
+        sys.exit(2)
+    try:
+        ftpPassword = argv[0]
+        ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
+        print "  Successfully authenticated to FTP server"
+    except ftplib.error_perm:
+        print "  530 Login authentication failed"
+        sys.exit()
+
     # Read config.ini
     Config = ConfigParser.ConfigParser()
     Config.read("config.ini")
@@ -75,6 +91,7 @@ def main(argv):
         button_state = GPIO.input(GPIO_BUTTON)
         if button_state == 0:
             GPIO.cleanup()
+            ftp.quit()
             sys.exit()
 
         # Get comparison image
@@ -85,16 +102,27 @@ def main(argv):
             print "  Motion detected. Saving photo..."
             # Turn on LED
             GPIO.output(GPIO_LED, GPIO.HIGH)
-            # Determine file names
-            msTime = long(time.time() * 1000)
-            fileName = 'Web/img/image-' + str(msTime) + '.jpg'
-            thumbFileName = 'Web/img/thumb-' + str(msTime) + '.jpg'
             # Save large image
-            saveImage(camera, saveWidth, saveHeight, fileName)
+            localFileName = "capture.jpg"
+            saveImage(camera, saveWidth, saveHeight, localFileName)
             # Resize large image into thumbnail
-            largeImage = img.open(fileName)
+            localThumbFileName = "capture-thumb.jpg"
+            largeImage = img.open(localFileName)
             largeImage.thumbnail((thumbWidth, thumbHeight), img.ANTIALIAS)
-            largeImage.save(thumbFileName)
+            largeImage.save(localThumbFileName)
+            # Determine remote file names
+            msTime = long(time.time() * 1000)
+            remoteFileName = 'image-' + str(msTime) + '.jpg'
+            remoteThumbFileName = 'thumb-' + str(msTime) + '.jpg'
+            print "  Uploading photo..."
+            try:
+                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+                uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
+            except ftplib.error_temp:
+                # If FTP session timed out, recreate and reattempt the upload
+                ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
+                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+                uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
             # Send a push notification
             if pushNotificationsEnabled and msTime - lastPushNotificationTime > pushNotificationDelay:
                 print "  Sending push notification..."
@@ -127,6 +155,12 @@ def captureTestImage(camera, width, height):
 def saveImage(camera, width, height, name):
     camera.resolution = (width, height)
     camera.capture(name)
+
+# Upload a file to the FTP server
+def uploadFileUsingFTP(ftp, localFileName, remoteFileName):
+    file = open(localFileName, 'rb')
+    ftp.storbinary('STOR ' + remoteFileName, file)
+    file.close()
 
 # Return whether or not the two images are different
 def isImageChanged(imgArray1, imgArray2, threshold, sensitivity):
@@ -164,7 +198,6 @@ def sendPushNotification(application_id, rest_api_key):
         })
     return json.loads(connection.getresponse().read())
 
-
-
 if __name__ == "__main__":
   main(sys.argv[1:])
+
