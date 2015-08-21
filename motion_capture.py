@@ -80,6 +80,10 @@ def main(argv):
     noMotionImage = image1
     noMotionCount = 0
 
+    # Limit how often push notifications are sent
+    lastPushNotificationTime = -1
+    pushNotificationDelay = 300000 # Milliseconds
+
     print "  Ready."
 
     while True:
@@ -107,9 +111,9 @@ def main(argv):
             largeImage.thumbnail((thumbWidth, thumbHeight), img.ANTIALIAS)
             largeImage.save(localThumbFileName)
             # Determine remote file names
-            ts = long(time.time() * 1000)
-            remoteFileName = 'image-' + str(ts) + '.jpg'
-            remoteThumbFileName = 'thumb-' + str(ts) + '.jpg'
+            msTime = long(time.time() * 1000)
+            remoteFileName = 'image-' + str(msTime) + '.jpg'
+            remoteThumbFileName = 'thumb-' + str(msTime) + '.jpg'
             print "  Uploading photo..."
             try:
                 uploadFileUsingFTP(ftp, localFileName, remoteFileName)
@@ -120,9 +124,10 @@ def main(argv):
                 uploadFileUsingFTP(ftp, localFileName, remoteFileName)
                 uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
             # Send a push notification
-            if pushNotificationsEnabled:
+            if pushNotificationsEnabled and msTime - lastPushNotificationTime > pushNotificationDelay:
                 print "  Sending push notification..."
                 sendPushNotification(application_id, rest_api_key)
+                lastPushNotificationTime = msTime
             # Turn off LED
             GPIO.output(GPIO_LED, GPIO.LOW)
             print "  Ready."
