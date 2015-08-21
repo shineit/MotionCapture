@@ -12,7 +12,7 @@ import Parse
 import Bolts
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MSBClientManagerDelegate {
 
     var window: UIWindow?
     var band: MSBClient?
@@ -112,11 +112,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         if (error == nil) {
                             println("[MSB] Successfully sent notification!")
                         } else {
-                            println(error.localizedDescription)
+                            println("[MSB] Error sending notification: \(error.localizedDescription)")
                         }
                     })
                 } else {
-                    println(error.localizedDescription)
+                    println("[MSB] Error creating tile: \(error.localizedDescription)")
                 }
             })
         }
@@ -147,6 +147,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    // MARK: MSBClientManagerDelegate
+    
+    func clientManager(clientManager: MSBClientManager!, clientDidConnect client: MSBClient!) {
+        println("[MSB] Connected.")
+//        client.notificationManager.registerNotificationWithCompletionHandler { (error) -> Void in
+//            if (error != nil) {
+//                println("[MSB] Error registering with notifications: \(error.localizedDescription)")
+//            }
+//        }
+    }
+    
+    func clientManager(clientManager: MSBClientManager!, clientDidDisconnect client: MSBClient!) {
+        println("[MSB] Disconnected.")
+    }
+    
+    func clientManager(clientManager: MSBClientManager!, client: MSBClient!, didFailToConnectWithError error: NSError!) {
+        println("[MSB] Failed to connect: \(error.localizedDescription)")
+    }
 
 }
 
