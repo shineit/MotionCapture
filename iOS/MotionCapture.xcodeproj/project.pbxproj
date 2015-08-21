@@ -23,6 +23,7 @@
 		6851380D1B8642C70017F433 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851380C1B8642C70017F433 /* ImageCollectionViewController.swift */; };
 		685138101B86463F0017F433 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851380E1B86463F0017F433 /* ImageCollectionViewCell.swift */; };
 		685138141B864F440017F433 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685138131B864F440017F433 /* AlamofireExtensions.swift */; };
+		685138161B86A70E0017F433 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685138151B86A70E0017F433 /* Constants.swift */; };
 		689011421B802C760007F062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011411B802C760007F062 /* AppDelegate.swift */; };
 		689011471B802C760007F062 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689011451B802C760007F062 /* Main.storyboard */; };
 		689011491B802C760007F062 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 689011481B802C760007F062 /* Images.xcassets */; };
@@ -65,6 +66,7 @@
 		6851380C1B8642C70017F433 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		6851380E1B86463F0017F433 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		685138131B864F440017F433 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtensions.swift; sourceTree = "<group>"; };
+		685138151B86A70E0017F433 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6890113C1B802C760007F062 /* MotionCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		689011401B802C760007F062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689011411B802C760007F062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				689011411B802C760007F062 /* AppDelegate.swift */,
 				689011451B802C760007F062 /* Main.storyboard */,
+				685138151B86A70E0017F433 /* Constants.swift */,
 				685138131B864F440017F433 /* AlamofireExtensions.swift */,
 				6851380C1B8642C70017F433 /* ImageCollectionViewController.swift */,
 				689011651B80338D0007F062 /* ImageViewController.swift */,
@@ -384,6 +387,7 @@
 				689011661B80338D0007F062 /* ImageViewController.swift in Sources */,
 				689011641B802E7F0007F062 /* ImagesModel.swift in Sources */,
 				689011681B803B400007F062 /* Image.swift in Sources */,
+				685138161B86A70E0017F433 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,9 +20,6 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Do any additional setup after loading the view.
         
         navigationController?.hidesBarsOnTap = true
@@ -55,12 +52,8 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func refreshButton(sender: UIBarButtonItem) {
-        loadImageList()
-    }
-    
     func loadImageList() {
-        Alamofire.request(.GET, "http://birdcam.floccul.us/images/25")
+        Alamofire.request(.GET, "\(Constants.hostname)/images/25")
             .responseJSON { _, _, json, _ in
                 let images = JSON(json!)
                 self.imagesModel.clear()
@@ -72,7 +65,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
                     self.imagesModel.addImage(image)
                 }
                 self.imagesModel.sortByTime()
-                self.collectionView?.reloadData()
+                self.collectionView.reloadData()
                 self.updateTimeLabelText()
         }
     }
@@ -83,6 +76,8 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         if (visibleItems.count > 0) {
             let topVisibleItem = visibleItems.reduce(visibleItems[0], combine: { $0.row < $1.row ? $0 : $1 }) as! NSIndexPath
             timeLabel.text = imagesModel.images[topVisibleItem.row].timeSince
+        } else if (imagesModel.images.count > 0) {
+            timeLabel.text = imagesModel.images[0].timeSince
         }
     }
     

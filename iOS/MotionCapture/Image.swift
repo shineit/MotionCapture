@@ -12,11 +12,11 @@ class Image {
     
     var name: String
     var url: NSURL {
-        return NSURL(string: "http://birdcam.floccul.us/\(name)")!
+        return NSURL(string: "\(Constants.hostname)/\(name)")!
     }
     var thumbName: String
     var thumbUrl: NSURL {
-        return NSURL(string: "http://birdcam.floccul.us/\(thumbName)")!
+        return NSURL(string: "\(Constants.hostname)/\(thumbName)")!
     }
     var epochTime: Double
     var formattedTime: String {
@@ -29,17 +29,17 @@ class Image {
         let seconds = Int(NSDate().timeIntervalSince1970 - epochTime)
         switch seconds {
         case 0..<60:
-            return "\(seconds) seconds"
+            return "\(seconds) seconds ago"
         case 60..<3600:
-            return "\(seconds/60) minutes"
+            return "\(seconds/60) minutes ago"
         case 3600..<86400:
-            return "\(seconds/3600) hours"
+            return "\(seconds/3600) hours ago"
         case 86400..<2592000:
-            return "\(seconds/86400) days"
+            return "\(seconds/86400) days ago"
         case 2592000..<31536000:
-            return "\(seconds/2592000) months"
+            return "\(seconds/2592000) months ago"
         default:
-            return "\(seconds/31536000) years"
+            return "\(seconds/31536000) years ago"
         }
     }
     
