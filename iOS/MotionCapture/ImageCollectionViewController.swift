@@ -40,6 +40,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         addAutoLayoutToFillContainer(blurView, subView: vibrancyView)
         
         timeLabel = UILabel()
+        timeLabel.text = "Loading..."
         timeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 24)
         timeLabel.textAlignment = .Center
         vibrancyView.contentView.addSubview(timeLabel)
