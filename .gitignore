@@ -1,4 +1,2 @@
 config.ini
-image.jpg
-capture.jpg
-capture-thumb.jpg
+Web/img/*
