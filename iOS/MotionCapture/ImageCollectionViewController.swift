@@ -109,6 +109,15 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
     }
     
     // Resize cells when orientation changes
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition(nil, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+
     
     // MARK: UICollectionViewDataSource
 

@@ -30,7 +30,6 @@
 		6890114C1B802C760007F062 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6890114A1B802C760007F062 /* LaunchScreen.xib */; };
 		689011581B802C770007F062 /* MotionCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011571B802C770007F062 /* MotionCaptureTests.swift */; };
 		689011641B802E7F0007F062 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011631B802E7F0007F062 /* ImagesModel.swift */; };
-		689011661B80338D0007F062 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011651B80338D0007F062 /* ImageViewController.swift */; };
 		689011681B803B400007F062 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011671B803B400007F062 /* Image.swift */; };
 		6890116B1B81697E0007F062 /* ApplicationInsights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6890116A1B81697E0007F062 /* ApplicationInsights.framework */; };
 		CA43796E4ACBB2DC067ED934 /* Pods_MotionCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321AAFEE1087665D0A0729B0 /* Pods_MotionCapture.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -77,7 +76,6 @@
 		689011561B802C770007F062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689011571B802C770007F062 /* MotionCaptureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionCaptureTests.swift; sourceTree = "<group>"; };
 		689011631B802E7F0007F062 /* ImagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
-		689011651B80338D0007F062 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		689011671B803B400007F062 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		6890116A1B81697E0007F062 /* ApplicationInsights.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationInsights.framework; path = Vendor/ApplicationInsights/ApplicationInsights.framework; sourceTree = "<group>"; };
 		6D4F05E899F5A695D186CD7B /* Pods-MotionCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionCapture.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotionCapture/Pods-MotionCapture.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				685138151B86A70E0017F433 /* Constants.swift */,
 				685138131B864F440017F433 /* AlamofireExtensions.swift */,
 				6851380C1B8642C70017F433 /* ImageCollectionViewController.swift */,
-				689011651B80338D0007F062 /* ImageViewController.swift */,
 				689011631B802E7F0007F062 /* ImagesModel.swift */,
 				689011671B803B400007F062 /* Image.swift */,
 				6851380E1B86463F0017F433 /* ImageCollectionViewCell.swift */,
@@ -384,7 +381,6 @@
 				689011421B802C760007F062 /* AppDelegate.swift in Sources */,
 				685138101B86463F0017F433 /* ImageCollectionViewCell.swift in Sources */,
 				685138141B864F440017F433 /* AlamofireExtensions.swift in Sources */,
-				689011661B80338D0007F062 /* ImageViewController.swift in Sources */,
 				689011641B802E7F0007F062 /* ImagesModel.swift in Sources */,
 				689011681B803B400007F062 /* Image.swift in Sources */,
 				685138161B86A70E0017F433 /* Constants.swift in Sources */,
