@@ -68,7 +68,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="VzB-Lv-UTL" secondAttribute="trailing" constant="-16" id="Jgq-qz-VoI"/>
                             <constraint firstItem="VzB-Lv-UTL" firstAttribute="top" secondItem="ykI-Sg-9DK" secondAttribute="bottom" id="Rp1-VG-Nc5"/>
