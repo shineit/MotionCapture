@@ -33,6 +33,8 @@ rest_api_key=<rest api key>
 ```
 Where you replace <application id> with your Parse application ID and <rest api key> with your Parse application's REST API key.
 
+If you have a Microsoft Band connected, notifications will also show up on the Band.
+
 ## Credits
 
 - Paul Tynes from The Noun Project (https://thenounproject.com/term/webcam/5490/)
