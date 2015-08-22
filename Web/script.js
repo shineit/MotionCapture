@@ -23,7 +23,8 @@ window.onload = function() {
 function addImage(args) {
     var div = document.createElement('div');
     div.setAttribute('data-count', args.count);
-    div.setAttribute('data-timestamp', getFormattedDate(args.epochTime) + ' - ' + timeSince(args.epochTime) + ' ago');
+    var epochTime = Number(args.epochTime);
+    div.setAttribute('data-timestamp', getFormattedDate(epochTime) + ' - ' + timeSince(epochTime) + ' ago');
     div.className = 'imageContainer';
     var img = document.createElement('img');
     img.src = baseUrl + args.thumb;
