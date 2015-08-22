@@ -54,15 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotificationTypes(types)
         }
         
-        // Connect to Microsoft Band
-        let clients = MSBClientManager.sharedManager().attachedClients()
-        self.band = clients.first as? MSBClient
-        if let band = self.band {
-            MSBClientManager.sharedManager().connectClient(self.band)
-            println("[MSB] Connecting to Band...")
-        } else {
-            println("[MSB] No Bands attached.")
-        }
+        connectToBand()
         
         return true
     }
@@ -82,18 +74,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
         PFPush.handlePush(userInfo)
+        
+        // In case Band has disconnected, try to reconnect
+        if self.band?.isDeviceConnected == false {
+            connectToBand()
+        }
+        
         if let band = self.band {
             sendNotificationToBand(band)
         }
+        
         if application.applicationState == UIApplicationState.Inactive {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         } else if application.applicationState == UIApplicationState.Active {
             // Send notification that motion was detected
             NSNotificationCenter.defaultCenter().postNotificationName("motionDetected", object: nil)
             
-            // Set the badge notification count to 0
-            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+            resetApplicationIconBadgeNumber()
+        }
+    }
+    
+    func connectToBand() {
+        let clients = MSBClientManager.sharedManager().attachedClients()
+        self.band = clients.first as? MSBClient
+        if let band = self.band {
+            MSBClientManager.sharedManager().connectClient(self.band)
+            println("[MSB] Connecting to Band...")
+        } else {
+            println("[MSB] No Bands attached.")
         }
     }
     
@@ -121,6 +131,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         }
     }
+    
+    func resetApplicationIconBadgeNumber() {
+        let currentInstallation = PFInstallation.currentInstallation()
+        if (currentInstallation.badge != 0) {
+            currentInstallation.badge = 0
+            currentInstallation.saveEventually()
+        }
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -139,8 +157,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
-        // Set the badge notification count to 0
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        resetApplicationIconBadgeNumber()
     }
 
     func applicationWillTerminate(application: UIApplication) {

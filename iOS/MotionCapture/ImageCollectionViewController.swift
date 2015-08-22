@@ -78,30 +78,32 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func loadImageList() {
-        Alamofire.request(.GET, "\(Constants.hostname)/images/50")
-            .responseJSON { _, _, json, _ in
-                let images = JSON(json!)
-                
-                // Only proceed if the result is different than the current model
-                if (images.count > 0 && self.imagesModel.images.count > 0) {
-                    let oldFirstImageName = self.imagesModel.images[0].name
-                    let newFirstImageName = images[0]["name"].stringValue
-                    if (oldFirstImageName == newFirstImageName) {
-                        return
+        Alamofire.request(.GET, "\(Constants.hostname)/images/25")
+            .responseJSON { _, _, json, err in
+                if (err == nil) {
+                    let images = JSON(json!)
+                    
+                    // Only proceed if the result is different than the current model
+                    if (images.count > 0 && self.imagesModel.images.count > 0) {
+                        let oldFirstImageName = self.imagesModel.images[0].name
+                        let newFirstImageName = images[0]["name"].stringValue
+                        if (oldFirstImageName == newFirstImageName) {
+                            return
+                        }
                     }
+                    
+                    self.imagesModel.clear()
+                    for (index: String, subJson: JSON) in images {
+                        let name = subJson["name"].stringValue
+                        let thumbName = subJson["thumb"].stringValue
+                        let epochTime = subJson["epochTime"].doubleValue / 1000.0
+                        let image = Image(name: name, thumbName: thumbName, epochTime: epochTime)
+                        self.imagesModel.addImage(image)
+                    }
+                    self.imagesModel.sortByTime()
+                    self.collectionView.reloadData()
+                    self.updateTimeLabelText()
                 }
-                
-                self.imagesModel.clear()
-                for (index: String, subJson: JSON) in images {
-                    let name = subJson["name"].stringValue
-                    let thumbName = subJson["thumb"].stringValue
-                    let epochTime = subJson["epochTime"].doubleValue / 1000.0
-                    let image = Image(name: name, thumbName: thumbName, epochTime: epochTime)
-                    self.imagesModel.addImage(image)
-                }
-                self.imagesModel.sortByTime()
-                self.collectionView.reloadData()
-                self.updateTimeLabelText()
         }
     }
     
