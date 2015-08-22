@@ -103,17 +103,17 @@ def main(argv):
             # Turn on LED
             GPIO.output(GPIO_LED, GPIO.HIGH)
             # Save large image
-            localFileName = "capture.jpg"
+            localFileName = "Web/img/capture.jpg"
             saveImage(camera, saveWidth, saveHeight, localFileName)
             # Resize large image into thumbnail
-            localThumbFileName = "capture-thumb.jpg"
+            localThumbFileName = "Web/img/capture-thumb.jpg"
             largeImage = img.open(localFileName)
             largeImage.thumbnail((thumbWidth, thumbHeight), img.ANTIALIAS)
             largeImage.save(localThumbFileName)
             # Determine remote file names
             msTime = long(time.time() * 1000)
-            remoteFileName = 'image-' + str(msTime) + '.jpg'
-            remoteThumbFileName = 'thumb-' + str(msTime) + '.jpg'
+            remoteFileName = 'img/image-' + str(msTime) + '.jpg'
+            remoteThumbFileName = 'img/thumb-' + str(msTime) + '.jpg'
             print "  Uploading photo..."
             try:
                 uploadFileUsingFTP(ftp, localFileName, remoteFileName)

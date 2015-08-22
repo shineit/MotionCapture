@@ -37,6 +37,8 @@ GET /images/{max}
 ```
 
 ## iOS Client
+<img src="https://raw.githubusercontent.com/JessicaYeh/MotionCapture/master/Screenshots/screenshot-iOS.png" alt="Screenshot of iOS Client" height="250"/>
+
 There is an iOS app for viewing captured photos. It supports push notifications that are sent from the Python script whenever motion is detected. It also sends the notifications to a Microsoft Band if you have one connected.
 
 I used Parse to handle the push notification backend for me. To configure Parse push notifications in the Python script, create a file named *config.ini* in the repo root with:
