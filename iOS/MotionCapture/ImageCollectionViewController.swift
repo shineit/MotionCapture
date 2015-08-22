@@ -17,6 +17,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
     @IBOutlet weak var timeLabelContainer: UIView!
     var timeLabel: UILabel!
     var refreshTimer: NSTimer!
+    var updateTimeLabelTimer: NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,9 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         
         // Check for new images every few seconds
         refreshTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "loadImageList", userInfo: nil, repeats: true)
+        
+        // Update the time label every second
+        updateTimeLabelTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimeLabelText", userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -64,6 +68,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         
         NSNotificationCenter.defaultCenter().removeObserver(self)
         refreshTimer.invalidate()
+        updateTimeLabelTimer.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
