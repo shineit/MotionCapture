@@ -159,7 +159,8 @@ def saveImage(camera, width, height, name):
 # Upload a file to the FTP server
 def uploadFileUsingFTP(ftp, localFileName, remoteFileName):
     file = open(localFileName, 'rb')
-    ftp.storbinary('STOR ' + remoteFileName, file)
+    ftp.storbinary('STOR ' + remoteFileName + '.tmp', file)
+    ftp.rename(remoteFileName + '.tmp', remoteFileName)
     file.close()
 
 # Return whether or not the two images are different
