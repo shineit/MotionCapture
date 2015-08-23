@@ -8,6 +8,7 @@ import ftplib, sys, getopt
 import Image as img
 import ConfigParser
 import json, httplib
+import re
 
 
 def main(argv):
@@ -67,6 +68,14 @@ def main(argv):
     saveWidth = 1024
     saveHeight = 768
 
+    # Limit how often push notifications are sent
+    lastPushNotificationTime = -1
+    pushNotificationDelay = 300000 # Milliseconds
+
+    # Check for images to delete once a day
+    lastImageDeleteTime = -1
+    imageDeleteDelay = 86400000 # Milliseconds
+
     # Start the camera
     print "  Starting camera..."
     camera = picamera.PiCamera()
@@ -80,10 +89,6 @@ def main(argv):
     noMotionImage = image1
     noMotionCount = 0
 
-    # Limit how often push notifications are sent
-    lastPushNotificationTime = -1
-    pushNotificationDelay = 300000 # Milliseconds
-
     print "  Ready."
 
     while True:
@@ -93,6 +98,22 @@ def main(argv):
             GPIO.cleanup()
             ftp.quit()
             sys.exit()
+
+        # Keep FTP session alive, and reconnect if needed
+        try:
+            ftp.voidcmd("NOOP")
+        except:
+            ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
+
+        # Get the current epoch time in ms
+        msTime = long(time.time() * 1000)
+
+        # Delete old images
+        if msTime - lastImageDeleteTime > imageDeleteDelay:
+            print "  Deleting old images..."
+            deleteImagesBefore(msTime - imageDeleteDelay, ftp)
+            lastImageDeleteTime = msTime
+            print "  Done deleting old images."
 
         # Get comparison image
         image2 = captureTestImage(camera, testWidth, testHeight)
@@ -111,18 +132,11 @@ def main(argv):
             largeImage.thumbnail((thumbWidth, thumbHeight), img.ANTIALIAS)
             largeImage.save(localThumbFileName)
             # Determine remote file names
-            msTime = long(time.time() * 1000)
             remoteFileName = 'img/image-' + str(msTime) + '.jpg'
             remoteThumbFileName = 'img/thumb-' + str(msTime) + '.jpg'
             print "  Uploading photo..."
-            try:
-                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
-                uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
-            except ftplib.error_temp:
-                # If FTP session timed out, recreate and reattempt the upload
-                ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
-                uploadFileUsingFTP(ftp, localFileName, remoteFileName)
-                uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
+            uploadFileUsingFTP(ftp, localFileName, remoteFileName)
+            uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
             # Send a push notification
             if pushNotificationsEnabled and msTime - lastPushNotificationTime > pushNotificationDelay:
                 print "  Sending push notification..."
@@ -162,6 +176,14 @@ def uploadFileUsingFTP(ftp, localFileName, remoteFileName):
     ftp.storbinary('STOR ' + remoteFileName + '.tmp', file)
     ftp.rename(remoteFileName + '.tmp', remoteFileName)
     file.close()
+
+# Delete all the images before a certain epoch time (ms)
+def deleteImagesBefore(epochTimeMs, ftp):
+    files = ftp.nlst('img')
+    regex = re.compile(r'^\w{5}-\d{13}.jpg$')
+    images = filter(lambda i: regex.search(i), files)
+    imagesToDelete = filter(lambda i: long(i[6:-4]) < epochTimeMs, images)
+    map(lambda i: ftp.delete('img/' + i), imagesToDelete)
 
 # Return whether or not the two images are different
 def isImageChanged(imgArray1, imgArray2, threshold, sensitivity):
