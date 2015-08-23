@@ -83,7 +83,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func loadImageList() {
-        Alamofire.request(.GET, "\(Constants.hostname)/images/25")
+        Alamofire.request(.GET, "\(Constants.hostname)/api/images/25")
             .responseJSON { _, _, json, err in
                 if (err == nil) {
                     let images = JSON(json!)

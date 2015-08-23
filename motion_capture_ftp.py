@@ -124,16 +124,16 @@ def main(argv):
             # Turn on LED
             GPIO.output(GPIO_LED, GPIO.HIGH)
             # Save large image
-            localFileName = "Web/img/capture.jpg"
+            localFileName = "Web/capture/capture.jpg"
             saveImage(camera, saveWidth, saveHeight, localFileName)
             # Resize large image into thumbnail
-            localThumbFileName = "Web/img/capture-thumb.jpg"
+            localThumbFileName = "Web/capture/capture-thumb.jpg"
             largeImage = img.open(localFileName)
             largeImage.thumbnail((thumbWidth, thumbHeight), img.ANTIALIAS)
             largeImage.save(localThumbFileName)
             # Determine remote file names
-            remoteFileName = 'img/image-' + str(msTime) + '.jpg'
-            remoteThumbFileName = 'img/thumb-' + str(msTime) + '.jpg'
+            remoteFileName = 'capture/image-' + str(msTime) + '.jpg'
+            remoteThumbFileName = 'capture/thumb-' + str(msTime) + '.jpg'
             print "  Uploading photo..."
             uploadFileUsingFTP(ftp, localFileName, remoteFileName)
             uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
@@ -179,11 +179,11 @@ def uploadFileUsingFTP(ftp, localFileName, remoteFileName):
 
 # Delete all the images before a certain epoch time (ms)
 def deleteImagesBefore(epochTimeMs, ftp):
-    files = ftp.nlst('img')
+    files = ftp.nlst('capture')
     regex = re.compile(r'^\w{5}-\d{13}.jpg$')
     images = filter(lambda i: regex.search(i), files)
     imagesToDelete = filter(lambda i: long(i[6:-4]) < epochTimeMs, images)
-    map(lambda i: ftp.delete('img/' + i), imagesToDelete)
+    map(lambda i: ftp.delete('capture/' + i), imagesToDelete)
 
 # Return whether or not the two images are different
 def isImageChanged(imgArray1, imgArray2, threshold, sensitivity):

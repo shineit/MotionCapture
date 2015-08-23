@@ -4,14 +4,9 @@ require 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
 
-// Redirect index.php to index.html
-$app->get('/', function () use ($app) {
-    $app->redirect("index.html");
-});
-
 // [ { "name": "image-1234567890.jpg", "thumb": "thumb-1234567890.jpg", "epochTime": 1234567890} ]
 $app->get('/images(/:maxNum)', function ($maxNum = -1) {
-    $dir = getcwd() . "/img";
+    $dir = getcwd() . "/../capture";
     $files = scandir($dir);
 
     // Filter list of files down to only images matching the correct name format
@@ -36,7 +31,7 @@ $app->get('/images(/:maxNum)', function ($maxNum = -1) {
             break;
         }
         $epochTime = substr($fileName, 6, 13);
-        $image = array("name" => "img/".$fileName, "thumb" => "img/thumb-".$epochTime.".jpg", "epochTime" => $epochTime);
+        $image = array("name" => "capture/".$fileName, "thumb" => "capture/thumb-".$epochTime.".jpg", "epochTime" => $epochTime);
         array_push($images, $image);
         $imageCount++;
     }

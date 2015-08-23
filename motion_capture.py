@@ -89,8 +89,8 @@ def main(argv):
             # Turn on LED
             GPIO.output(GPIO_LED, GPIO.HIGH)
             # Determine file names
-            fileName = 'Web/img/image-' + str(msTime) + '.jpg'
-            thumbFileName = 'Web/img/thumb-' + str(msTime) + '.jpg'
+            fileName = 'Web/capture/image-' + str(msTime) + '.jpg'
+            thumbFileName = 'Web/capture/thumb-' + str(msTime) + '.jpg'
             # Save large image
             saveImage(camera, saveWidth, saveHeight, fileName)
             # Resize large image into thumbnail

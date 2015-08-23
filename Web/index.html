@@ -1,12 +1,113 @@
 <html>
+    <head>
+		<title>Birdcam</title>
+		<link rel="icon" type="image/png" href="res/birdcam-favicon.png">
+		
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="script.js"></script>
-</head>
+        <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
-<body>
-<div id="images"></div>
-</body>
+		<!-- TODO: move all CSS and JS -->
+		
+		<style>
+			body {
+				background-color: #000;
+				margin: 0;
+				padding: 0;
+			}
+			.fotorama__caption {
+				background-color: rgba(0,0,0,0.5);
+				bottom: initial;
+				color: #FFF;
+				font-size: 2em; /* TODO: responsive size */
+				text-align: center;
+			}
+			.fotorama__caption__wrap {
+				background-color: transparent;
+			}
+		</style>
+		
+        <script>
+            var BASE_URL = 'http://birdcam.floccul.us/';
+            var MAX_IMAGES = 50;
 
+            function load() {
+				$.get(BASE_URL+'api/images/'+MAX_IMAGES, function(data) {
+					data = JSON.parse(data);
+					var photos = [];
+					data.forEach(function(item){
+						photos.push({
+							img: BASE_URL + item.name,
+            				caption: getFormattedDate(item.epochTime) +
+								' &nbsp;&bull;&nbsp; <strong>' +
+								timeSince(item.epochTime) + ' ago</strong>',
+							thumb: BASE_URL + item.thumb,
+						});
+					});
+					var fotorama = $('#gallery').fotorama().data('fotorama');
+					fotorama.load(photos);
+				});
+			}
+
+			function getFormattedDate(time) {
+				var date = new Date(parseInt(time));
+				var options = {
+					weekday: "short",
+					month: "short",
+					day: "numeric",
+					hour: "2-digit",
+					minute: "2-digit",
+					second: "2-digit"
+				};
+				return date.toLocaleTimeString("en-us", options);
+			};
+
+			function timeSince(date) {
+				var seconds = Math.floor((new Date() - date) / 1000);
+				var interval = Math.floor(seconds / 31536000);
+				if (interval > 1) {
+					return interval + " years";
+				}
+				interval = Math.floor(seconds / 2592000);
+				if (interval > 1) {
+					return interval + " months";
+				}
+				interval = Math.floor(seconds / 86400);
+				if (interval > 1) {
+					return interval + " days";
+				}
+				interval = Math.floor(seconds / 3600);
+				if (interval > 1) {
+					return interval + " hours";
+				}
+				interval = Math.floor(seconds / 60);
+				if (interval > 1) {
+					return interval + " minutes";
+				}
+				return Math.floor(seconds) + " seconds";
+			}
+			
+        </script>
+    </head>
+    <body onload="load()">
+        
+        <div id="gallery"
+			 class="fotorama"
+			 data-nav="thumbs"
+			 data-thumbwidth="120px"
+			 data-thumbheight="90px"
+			 
+			 data-transition="slide"
+			 data-click-transition="dissolve"
+			 
+			 data-arrows="true"
+			 data-click="true"
+			 data-swipe="true"
+			 data-trackpad="true"
+			 
+			 data-width="100%"
+			 data-height="100%"></div>
+        
+    </body>
 </html>
