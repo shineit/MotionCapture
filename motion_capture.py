@@ -77,6 +77,9 @@ def main(argv):
             GPIO.cleanup()
             sys.exit()
 
+        # Get the current epoch time in ms
+        msTime = long(time.time() * 1000)
+
         # Get comparison image
         image2 = captureTestImage(camera, testWidth, testHeight)
 
@@ -86,7 +89,6 @@ def main(argv):
             # Turn on LED
             GPIO.output(GPIO_LED, GPIO.HIGH)
             # Determine file names
-            msTime = long(time.time() * 1000)
             fileName = 'Web/img/image-' + str(msTime) + '.jpg'
             thumbFileName = 'Web/img/thumb-' + str(msTime) + '.jpg'
             # Save large image
