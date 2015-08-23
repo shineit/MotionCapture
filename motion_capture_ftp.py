@@ -72,9 +72,9 @@ def main(argv):
     lastPushNotificationTime = -1
     pushNotificationDelay = 300000 # Milliseconds
 
-    # Check for images to delete once a day
+    # Check for images to delete once a week
     lastImageDeleteTime = -1
-    imageDeleteDelay = 86400000 # Milliseconds
+    imageDeleteDelay = 86400000 * 7 # Milliseconds
 
     # Start the camera
     print "  Starting camera..."
