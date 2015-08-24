@@ -39,7 +39,7 @@ GET /getCaptures.php?limit=2
 Note: I intentially don't have the endpoint URL be something like /getCaptures?limit=2, since I don't want it to depend on the server having URL rewriting enabled.
 
 ## iOS Client
-<img src="https://raw.githubusercontent.com/JessicaYeh/MotionCapture/master/Screenshots/screenshot-iOS.png" alt="Screenshot of iOS Client" height="250"/>
+<img src="https://raw.githubusercontent.com/JessicaYeh/MotionCapture/master/Screenshots/screenshot-iOS.png" alt="Screenshot of iOS Client" height="300"/>
 
 There is an iOS app for viewing captured photos. It supports push notifications that are sent from the Python script whenever motion is detected. It also sends the notifications to a Microsoft Band if you have one connected.
 
@@ -52,6 +52,8 @@ rest_api_key=<rest api key>
 Where you replace <application id> with your Parse application ID and <rest api key> with your Parse application's REST API key.
 
 ## Web Client
+<img src="https://raw.githubusercontent.com/JessicaYeh/MotionCapture/master/Screenshots/screenshot-Web.png" alt="Screenshot of Web Client" height="300"/>
+
 There is a web client to view the captured photos on the web.
 
 ## Other Info
