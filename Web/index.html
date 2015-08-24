@@ -33,7 +33,7 @@
             var MAX_IMAGES = 50;
 
             function load() {
-				$.get(BASE_URL+'api/images/'+MAX_IMAGES, function(data) {
+				$.get(BASE_URL+'getCaptures.php?limit='+MAX_IMAGES, function(data) {
 					data = JSON.parse(data);
 					var photos = [];
 					data.forEach(function(item){

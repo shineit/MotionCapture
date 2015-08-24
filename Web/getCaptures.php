@@ -1,12 +1,14 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-require 'vendor/autoload.php';
 
-$app = new \Slim\Slim();
+$limit = $_GET['limit'];
+if (!isset($limit)) $limit = -1;
+
+echo getJsonForImages($limit);
 
 // [ { "name": "image-1234567890.jpg", "thumb": "thumb-1234567890.jpg", "epochTime": 1234567890} ]
-$app->get('/images(/:maxNum)', function ($maxNum = -1) {
-    $dir = getcwd() . "/../capture";
+function getJsonForImages($limit = -1) {
+    $dir = getcwd() . "/capture";
     $files = scandir($dir);
 
     // Filter list of files down to only images matching the correct name format
@@ -27,18 +29,18 @@ $app->get('/images(/:maxNum)', function ($maxNum = -1) {
     $images = array();
     $imageCount = 0;
     foreach ($filteredSortedFiles as $fileName) {
-        if ($maxNum != -1 && $imageCount >= $maxNum) {
+        if ($limit != -1 && $imageCount >= $limit) {
             break;
         }
         $epochTime = substr($fileName, 6, 13);
+        // TODO: Also check for the thumbnail file, and only push image objects 
+        // that have both, so that the thumbnail name isn't hardcoded
         $image = array("name" => "capture/".$fileName, "thumb" => "capture/thumb-".$epochTime.".jpg", "epochTime" => $epochTime);
         array_push($images, $image);
         $imageCount++;
     }
 
-    echo json_encode($images);
-});
-
-$app->run();
+    return json_encode($images);
+}
 
 ?>
