@@ -15,6 +15,8 @@ def main(argv):
     # Configure FTP
     ftpHostname = "floccul.us"
     ftpUsername = "birdcam@floccul.us"
+    lastFtpKeepAliveTime = -1
+    ftpKeepAliveTimeout = 300000 # milliseconds
     
     # Use command line argument to try to login to FTP
     if len(argv) < 1:
@@ -99,14 +101,17 @@ def main(argv):
             ftp.quit()
             sys.exit()
 
-        # Keep FTP session alive, and reconnect if needed
-        try:
-            ftp.voidcmd("NOOP")
-        except:
-            ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
-
         # Get the current epoch time in ms
         msTime = long(time.time() * 1000)
+
+        # Keep FTP session alive, and reconnect if needed
+        if msTime - lastFtpKeepAliveTime > ftpKeepAliveTimeout:
+            print "  Keeping FTP session alive..."
+            try:
+                ftp.voidcmd("NOOP")
+            except:
+                ftp = ftplib.FTP(ftpHostname, ftpUsername, ftpPassword)
+            lastFtpKeepAliveTime = msTime
 
         # Delete old images
         if msTime - lastImageDeleteTime > imageDeleteDelay:
