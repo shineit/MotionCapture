@@ -46,12 +46,12 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         timeLabel.textAlignment = .Center
         vibrancyView.contentView.addSubview(timeLabel)
         addAutoLayoutToFillContainer(vibrancyView, subView: timeLabel)
-        
-        loadImageList()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        loadImageList()
         
         // Subscribe to motion detection notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "controller:", name: "motionDetected", object: nil)
