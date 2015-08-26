@@ -6,6 +6,7 @@ import picamera
 import ftplib, time, sys, getopt
 import json, httplib
 import re
+import ConfigParser
 
 
 def main(argv):
@@ -27,6 +28,18 @@ def main(argv):
         print "  530 Login authentication failed"
         sys.exit()
     
+    # Read config.ini
+    Config = ConfigParser.ConfigParser()
+    Config.read("config.ini")
+
+    # Setup Parse (push notification service)
+    try:    
+        application_id = Config.get("Parse", "application_id")
+        rest_api_key = Config.get("Parse", "rest_api_key")
+        pushNotificationsEnabled = True
+    except:
+        pushNotificationsEnabled = False
+        
     # Use BCM GPIO references instead of physical pin numbers
     GPIO.setmode(GPIO.BCM)
    
