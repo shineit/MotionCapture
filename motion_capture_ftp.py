@@ -125,7 +125,7 @@ def main(argv):
 
         # If there was motion (images are different), save a larger image
         if isImageChanged(image1, image2, threshold, sensitivity) and isImageChanged(noMotionImage, image2, threshold, sensitivity):
-            print "  Motion detected. Saving photo..."
+            print "  Motion detected. Saving photos..."
             # Turn on LED
             GPIO.output(GPIO_LED, GPIO.HIGH)
             # Save large image
@@ -139,7 +139,8 @@ def main(argv):
             # Determine remote file names
             remoteFileName = 'capture/image-' + str(msTime) + '.jpg'
             remoteThumbFileName = 'capture/thumb-' + str(msTime) + '.jpg'
-            print "  Uploading photo..."
+            # Upload photos
+            print "  Uploading photos..."
             uploadFileUsingFTP(ftp, localFileName, remoteFileName)
             uploadFileUsingFTP(ftp, localThumbFileName, remoteThumbFileName)
             # Send a push notification
