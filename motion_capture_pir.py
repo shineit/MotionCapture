@@ -17,7 +17,7 @@ def main(argv):
     
     # Use command line argument to try to login to FTP
     if len(argv) < 1:
-        print '  Usage: ./motion_capture_with_pir.py <FTP password>'
+        print '  Usage: ./motion_capture_pir.py <FTP password>'
         sys.exit(2)
     try:
         ftpPassword = argv[0]
