@@ -7,6 +7,7 @@ import ftplib, time, sys, getopt
 import json, httplib
 import re
 import ConfigParser
+import Image as img
 
 
 def main(argv):
@@ -53,6 +54,9 @@ def main(argv):
     GPIO.setup(GPIO_LED, GPIO.OUT)
     GPIO.setup(GPIO_BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+    # Initialize LED to off
+    GPIO.output(GPIO_LED, GPIO.LOW)
+
     # File settings
     testWidth = 100
     testHeight = 75
@@ -95,6 +99,9 @@ def main(argv):
             if buttonState == 0:
                 terminate()
 
+            # Get the current epoch time in ms
+            msTime = long(time.time() * 1000)
+
             # Keep FTP session alive, and reconnect if needed
             if msTime - lastFtpKeepAliveTime > ftpKeepAliveTimeout:
                 print "  Keeping FTP session alive..."
@@ -117,9 +124,6 @@ def main(argv):
             if pirCurrentState == 1 and pirPreviousState == 0:
                 # PIR is triggered
                 print "  Motion detected. Saving photos..."
-
-                # Get the current epoch time in ms
-                msTime = long(time.time() * 1000)
 
                 # Turn on LED
                 GPIO.output(GPIO_LED, GPIO.HIGH)
@@ -198,14 +202,12 @@ def sendPushNotification(application_id, rest_api_key):
         })
     return json.loads(connection.getresponse().read())
 
-def terminate(ftp):
+def terminate():
     global ftp
 
     print "  Quit"
     # Reset GPIO settings
     GPIO.cleanup()
-    # Quit FTP session
-    ftp.quit()
     sys.exit()
     return
 
