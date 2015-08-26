@@ -58,8 +58,6 @@ def main(argv):
     GPIO.output(GPIO_LED, GPIO.LOW)
 
     # File settings
-    testWidth = 100
-    testHeight = 75
     thumbWidth = 240
     thumbHeight = 180
     saveWidth = 1024
