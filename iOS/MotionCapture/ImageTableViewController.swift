@@ -151,15 +151,23 @@ class ImageTableViewController: UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // Remove seperator inset
+        if (cell.respondsToSelector("setSeparatorInset:")) {
+            cell.separatorInset = UIEdgeInsetsZero
+        }
+        
+        // Prevent the cell from inheriting the Table View's margin settings
+        if (cell.respondsToSelector("setPreservesSuperviewLayoutMargins:")) {
+            cell.preservesSuperviewLayoutMargins = false
+        }
+        
+        // Explictly set your cell's layout margins
+        if (cell.respondsToSelector("setLayoutMargins:")) {
+            cell.layoutMargins = UIEdgeInsetsZero
+        }
     }
-    */
 
 }
