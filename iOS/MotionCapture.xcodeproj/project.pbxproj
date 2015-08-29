@@ -20,8 +20,6 @@
 		685138011B84E5660017F433 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138001B84E5660017F433 /* libsqlite3.dylib */; };
 		685138041B858C050017F433 /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138031B858C050017F433 /* MicrosoftBandKit_iOS.framework */; };
 		685138061B8593090017F433 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685138051B8593090017F433 /* CoreBluetooth.framework */; };
-		6851380D1B8642C70017F433 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851380C1B8642C70017F433 /* ImageCollectionViewController.swift */; };
-		685138101B86463F0017F433 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851380E1B86463F0017F433 /* ImageCollectionViewCell.swift */; };
 		685138141B864F440017F433 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685138131B864F440017F433 /* AlamofireExtensions.swift */; };
 		685138161B86A70E0017F433 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685138151B86A70E0017F433 /* Constants.swift */; };
 		689011421B802C760007F062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011411B802C760007F062 /* AppDelegate.swift */; };
@@ -32,6 +30,8 @@
 		689011641B802E7F0007F062 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011631B802E7F0007F062 /* ImagesModel.swift */; };
 		689011681B803B400007F062 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689011671B803B400007F062 /* Image.swift */; };
 		6890116B1B81697E0007F062 /* ApplicationInsights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6890116A1B81697E0007F062 /* ApplicationInsights.framework */; };
+		68EAB5631B917A6A0012CB64 /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EAB5621B917A6A0012CB64 /* ImageTableViewController.swift */; };
+		68EAB5651B917ABE0012CB64 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EAB5641B917ABE0012CB64 /* ImageTableViewCell.swift */; };
 		CA43796E4ACBB2DC067ED934 /* Pods_MotionCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321AAFEE1087665D0A0729B0 /* Pods_MotionCapture.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -62,8 +62,6 @@
 		685138031B858C050017F433 /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftBandKit_iOS.framework; path = Vendor/MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 		685138051B8593090017F433 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		6851380B1B861CBF0017F433 /* MotionCapture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotionCapture-Bridging-Header.h"; sourceTree = "<group>"; };
-		6851380C1B8642C70017F433 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
-		6851380E1B86463F0017F433 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		685138131B864F440017F433 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtensions.swift; sourceTree = "<group>"; };
 		685138151B86A70E0017F433 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6890113C1B802C760007F062 /* MotionCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +76,8 @@
 		689011631B802E7F0007F062 /* ImagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
 		689011671B803B400007F062 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		6890116A1B81697E0007F062 /* ApplicationInsights.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationInsights.framework; path = Vendor/ApplicationInsights/ApplicationInsights.framework; sourceTree = "<group>"; };
+		68EAB5621B917A6A0012CB64 /* ImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
+		68EAB5641B917ABE0012CB64 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		6D4F05E899F5A695D186CD7B /* Pods-MotionCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionCapture.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotionCapture/Pods-MotionCapture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,8 +144,8 @@
 				685138131B864F440017F433 /* AlamofireExtensions.swift */,
 				689011671B803B400007F062 /* Image.swift */,
 				689011631B802E7F0007F062 /* ImagesModel.swift */,
-				6851380C1B8642C70017F433 /* ImageCollectionViewController.swift */,
-				6851380E1B86463F0017F433 /* ImageCollectionViewCell.swift */,
+				68EAB5621B917A6A0012CB64 /* ImageTableViewController.swift */,
+				68EAB5641B917ABE0012CB64 /* ImageTableViewCell.swift */,
 				689011481B802C760007F062 /* Images.xcassets */,
 				6890114A1B802C760007F062 /* LaunchScreen.xib */,
 				6890113F1B802C760007F062 /* Supporting Files */,
@@ -264,6 +264,7 @@
 		689011341B802C760007F062 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Yeh;
 				TargetAttributes = {
@@ -377,9 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6851380D1B8642C70017F433 /* ImageCollectionViewController.swift in Sources */,
 				689011421B802C760007F062 /* AppDelegate.swift in Sources */,
-				685138101B86463F0017F433 /* ImageCollectionViewCell.swift in Sources */,
+				68EAB5651B917ABE0012CB64 /* ImageTableViewCell.swift in Sources */,
+				68EAB5631B917A6A0012CB64 /* ImageTableViewController.swift in Sources */,
 				685138141B864F440017F433 /* AlamofireExtensions.swift in Sources */,
 				689011641B802E7F0007F062 /* ImagesModel.swift in Sources */,
 				689011681B803B400007F062 /* Image.swift in Sources */,

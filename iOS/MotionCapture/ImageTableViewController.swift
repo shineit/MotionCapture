@@ -1,8 +1,8 @@
 //
-//  ImageCollectionViewController.swift
+//  ImageTableViewController.swift
 //  MotionCapture
 //
-//  Created by Jessica Yeh on 8/20/15.
+//  Created by Jessica Yeh on 8/29/15.
 //  Copyright (c) 2015 Yeh. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ImageCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ImageTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let imagesModel = ImagesModel.sharedInstance
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var timeLabelContainer: UIView!
     var timeLabel: UILabel!
     var refreshTimer: NSTimer!
@@ -23,12 +23,12 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         navigationController?.hidesBarsOnTap = true
-        collectionView.scrollsToTop = true
+        tableView.scrollsToTop = true
+        tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0)
         
-        // Prevent weird margin at the top of collection view
-        automaticallyAdjustsScrollViewInsets = false
+        // Allow row heights based on auto layout
+        tableView.estimatedRowHeight = 200.0
         
         // Add blur and vibrancy effects to the time label
         let blurEffect = UIBlurEffect(style: .ExtraLight)
@@ -70,7 +70,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         refreshTimer.invalidate()
         updateTimeLabelTimer.invalidate()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -106,7 +106,9 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
                         self.imagesModel.addImage(image)
                     }
                     self.imagesModel.sortByTime()
-                    self.collectionView.reloadData()
+                    self.tableView.reloadData()
+                    self.tableView.beginUpdates()
+                    self.tableView.endUpdates()
                     self.updateTimeLabelText()
                 }
         }
@@ -114,9 +116,9 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     // Update the time label with how long ago the top visible picture was taken
     func updateTimeLabelText() {
-        let visibleItems = collectionView.indexPathsForVisibleItems()
-        if (visibleItems.count > 0) {
-            let topVisibleItem = visibleItems.reduce(visibleItems[0], combine: { $0.row < $1.row ? $0 : $1 }) as! NSIndexPath
+        let visibleItems = tableView.indexPathsForVisibleRows()
+        if (visibleItems?.count > 0) {
+            let topVisibleItem = visibleItems!.reduce(visibleItems![0], combine: { $0.row < $1.row ? $0 : $1 }) as! NSIndexPath
             timeLabel.text = imagesModel.images[topVisibleItem.row].timeSince
         } else if (imagesModel.images.count > 0) {
             timeLabel.text = imagesModel.images[0].timeSince
@@ -131,45 +133,33 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDataSourc
         view.addConstraint(NSLayoutConstraint(item: subView, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1.0, constant: 0))
     }
     
-    // Resize cells when orientation changes
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        
-        coordinator.animateAlongsideTransition(nil, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            self.collectionView.collectionViewLayout.invalidateLayout()
-        })
-        
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-    }
-
-    
-    // MARK: UICollectionViewDataSource
-
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Return the number of items in the section
-        return imagesModel.images.count
-    }
-
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageCollectionViewCell", forIndexPath: indexPath) as! ImageCollectionViewCell
-    
-        // Configure the cell
-        cell.imageUrl = imagesModel.images[indexPath.row].thumbUrl
-    
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            let width = collectionView.bounds.size.width
-            let height = width * 0.75
-            return CGSizeMake(width, height)
-    }
-    
-    // MARK: UICollectionViewDelegate
-    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         updateTimeLabelText()
     }
+    
+    // MARK: - UITableViewDataSource
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return imagesModel.images.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ImageTableViewCell", forIndexPath: indexPath) as! ImageTableViewCell
+        
+        // Configure the cell
+        cell.imageUrl = imagesModel.images[indexPath.row].thumbUrl
+        
+        return cell
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
