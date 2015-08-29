@@ -44,7 +44,7 @@
                                                 <constraint firstItem="RmT-Nm-jlg" firstAttribute="top" secondItem="q8U-Vm-Jua" secondAttribute="topMargin" priority="751" constant="-8" id="Vs3-Gi-KqB"/>
                                                 <constraint firstAttribute="centerX" secondItem="wCF-Xj-4pT" secondAttribute="centerX" id="Ygh-0V-rTR"/>
                                                 <constraint firstItem="RmT-Nm-jlg" firstAttribute="leading" secondItem="q8U-Vm-Jua" secondAttribute="leadingMargin" priority="750" constant="-16" id="hef-ah-gCe"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="RmT-Nm-jlg" secondAttribute="bottom" priority="750" constant="-8" id="mTq-ei-fjB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="RmT-Nm-jlg" secondAttribute="bottom" priority="750" constant="-21" id="mTq-ei-fjB"/>
                                                 <constraint firstAttribute="centerY" secondItem="wCF-Xj-4pT" secondAttribute="centerY" id="ynz-AJ-Mn8"/>
                                             </constraints>
                                         </tableViewCellContentView>

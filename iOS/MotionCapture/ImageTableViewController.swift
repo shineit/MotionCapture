@@ -107,8 +107,8 @@ class ImageTableViewController: UIViewController, UITableViewDataSource, UITable
                     }
                     self.imagesModel.sortByTime()
                     self.tableView.reloadData()
-                    self.tableView.beginUpdates()
-                    self.tableView.endUpdates()
+//                    self.tableView.beginUpdates()
+//                    self.tableView.endUpdates()
                     self.updateTimeLabelText()
                 }
         }
